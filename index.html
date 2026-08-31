@@ -71,26 +71,32 @@ header{
 
 .container{
     max-width:1100px;
-    margin:30px auto;
+    margin:35px auto;
     padding:0 18px;
 }
 
 .produtos{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:24px;
 }
 
 .produto{
     background:white;
-    border-radius:15px;
+    border-radius:16px;
     overflow:hidden;
-    box-shadow:0 3px 12px #0001;
+    box-shadow:0 4px 16px #00000012;
+    transition:transform .2s, box-shadow .2s;
+}
+
+.produto:hover{
+    transform:translateY(-3px);
+    box-shadow:0 7px 22px #00000020;
 }
 
 .galeria{
     position:relative;
-    height:300px;
+    height:340px;
     background:#eee;
     overflow:hidden;
 }
@@ -110,15 +116,16 @@ header{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    width:36px;
-    height:36px;
+    width:38px;
+    height:38px;
     border:0;
     border-radius:50%;
     background:#ffffffdd;
     color:#000;
-    font-size:20px;
+    font-size:22px;
     cursor:pointer;
     z-index:2;
+    box-shadow:0 2px 8px #0002;
 }
 
 .esquerda{
@@ -139,33 +146,38 @@ header{
 }
 
 .info{
-    padding:16px;
+    padding:18px;
 }
 
 .info h2{
-    font-size:20px;
+    font-size:19px;
+    line-height:1.3;
+    margin-bottom:8px;
 }
 
 .tamanho{
     color:#777;
-    margin:7px 0;
+    font-size:14px;
+    margin:6px 0;
 }
 
 .preco{
-    font-size:22px;
+    font-size:24px;
     font-weight:bold;
-    margin:12px 0;
+    margin:14px 0;
 }
 
 .adicionar{
     width:100%;
-    padding:13px;
+    padding:14px;
     background:#000;
     color:white;
     border:0;
     border-radius:9px;
     font-weight:bold;
     cursor:pointer;
+    font-size:15px;
+    transition:background .2s;
 }
 
 .adicionar:hover{
@@ -285,8 +297,39 @@ footer{
 }
 
 @media(max-width:500px){
+
+    .hero{
+        padding:45px 20px;
+    }
+
     .hero h1{
         font-size:28px;
+    }
+
+    .produtos{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .galeria{
+        height:260px;
+    }
+
+    .info{
+        padding:13px;
+    }
+
+    .info h2{
+        font-size:16px;
+    }
+
+    .preco{
+        font-size:20px;
+    }
+
+    .adicionar{
+        padding:11px;
+        font-size:13px;
     }
 }
 </style>
