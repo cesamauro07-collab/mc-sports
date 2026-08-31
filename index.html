@@ -6,22 +6,32 @@
 <title>MC Sports</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f4f4f4;
+    background:#7a1230;
     color:#111;
 }
 
+/* TOPO */
+
 header{
-    background:#050505;
+    background:#004d98;
     color:white;
-    padding:18px;
+    padding:16px 18px;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
 .topo{
@@ -32,46 +42,141 @@ header{
     align-items:center;
 }
 
-.logo{
-    font-size:25px;
+.logo-topo{
+    font-size:26px;
     font-weight:900;
+    font-style:italic;
+    letter-spacing:-1px;
 }
 
 .slogan{
-    color:#aaa;
-    font-size:13px;
-    margin-top:4px;
+    color:#dcecff;
+    font-size:12px;
+    margin-top:2px;
 }
 
 .carrinho-btn{
     background:white;
-    color:#000;
+    color:#004d98;
     border:0;
-    padding:11px 15px;
-    border-radius:9px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    font-size:21px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 10px #0003;
+}
+
+/* TELA INICIAL */
+
+.inicio{
+    min-height:calc(100vh - 77px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    background:
+    linear-gradient(135deg,#004d98 0%,#004d98 42%,#7a1230 42%,#7a1230 100%);
+}
+
+.logo-principal{
+    width:145px;
+    height:145px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 10px 35px #0005;
+    border:8px solid #7a1230;
+}
+
+.logo-principal .bola{
+    font-size:43px;
+    line-height:1;
+}
+
+.logo-principal strong{
+    font-size:20px;
+    font-style:italic;
+    color:#004d98;
+    letter-spacing:-1px;
+}
+
+.logo-principal span{
+    font-size:8px;
+    font-weight:bold;
+    color:#7a1230;
+    letter-spacing:2px;
+}
+
+.inicio h1{
+    color:white;
+    font-size:52px;
+    font-weight:900;
+    font-style:italic;
+    letter-spacing:-3px;
+    text-shadow:3px 4px 0 #7a1230;
+}
+
+.inicio p{
+    color:#eee;
+    font-size:17px;
+    margin:8px 0 28px;
+}
+
+.botoes-inicio{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:min(300px,100%);
+    margin:auto;
+}
+
+.botao-camisas,
+.botao-whatsapp{
+    border:0;
+    padding:15px 20px;
+    border-radius:10px;
+    font-size:16px;
     font-weight:bold;
     cursor:pointer;
 }
 
-.hero{
-    background:#111;
+.botao-camisas{
+    background:white;
+    color:#004d98;
+}
+
+.botao-whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+/* PRODUTOS */
+
+.produtos-area{
+    background:#7a1230;
+    padding:40px 0 50px;
+}
+
+.titulo-produtos{
     color:white;
     text-align:center;
-    padding:55px 20px;
-}
-
-.hero h1{
-    font-size:36px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    color:#ccc;
+    font-size:30px;
+    margin-bottom:25px;
+    font-weight:900;
 }
 
 .container{
     max-width:1100px;
-    margin:35px auto;
+    margin:auto;
     padding:0 18px;
 }
 
@@ -85,13 +190,13 @@ header{
     background:white;
     border-radius:16px;
     overflow:hidden;
-    box-shadow:0 4px 16px #00000012;
-    transition:transform .2s, box-shadow .2s;
+    box-shadow:0 5px 18px #0003;
+    transition:transform .2s,box-shadow .2s;
 }
 
 .produto:hover{
     transform:translateY(-3px);
-    box-shadow:0 7px 22px #00000020;
+    box-shadow:0 8px 24px #0004;
 }
 
 .galeria{
@@ -170,19 +275,20 @@ header{
 .adicionar{
     width:100%;
     padding:14px;
-    background:#000;
+    background:#004d98;
     color:white;
     border:0;
     border-radius:9px;
     font-weight:bold;
     cursor:pointer;
     font-size:15px;
-    transition:background .2s;
 }
 
 .adicionar:hover{
-    background:#222;
+    background:#003b75;
 }
+
+/* CARRINHO */
 
 .carrinho{
     position:fixed;
@@ -280,10 +386,6 @@ header{
     cursor:pointer;
 }
 
-.continuar:hover{
-    background:#f2f2f2;
-}
-
 .vazio{
     text-align:center;
     color:#777;
@@ -292,18 +394,22 @@ header{
 
 footer{
     text-align:center;
-    padding:40px 20px;
-    color:#777;
+    padding:35px 20px;
+    background:#050505;
+    color:#aaa;
 }
+
+/* CELULAR */
 
 @media(max-width:500px){
 
-    .hero{
-        padding:45px 20px;
+    .inicio h1{
+        font-size:43px;
     }
 
-    .hero h1{
-        font-size:28px;
+    .logo-principal{
+        width:130px;
+        height:130px;
     }
 
     .produtos{
@@ -331,7 +437,9 @@ footer{
         padding:11px;
         font-size:13px;
     }
+
 }
+
 </style>
 </head>
 
@@ -342,31 +450,68 @@ footer{
 <div class="topo">
 
 <div>
-<div class="logo">MC SPORTS</div>
+<div class="logo-topo">MC SPORTS</div>
 <div class="slogan">A loja do seu time</div>
 </div>
 
-<button class="carrinho-btn" onclick="abrirCarrinho()">
-Carrinho (<span id="contador">0</span>)
+<button class="carrinho-btn" onclick="abrirCarrinho()" aria-label="Carrinho">
+🛒
 </button>
 
 </div>
 
 </header>
 
-<section class="hero">
 
-<h1>MC Sports</h1>
+<section class="inicio">
+
+<div>
+
+<div class="logo-principal">
+
+<div class="bola">⚽</div>
+
+<strong>MC</strong>
+
+<span>SPORTS</span>
+
+</div>
+
+<h1>MC SPORTS</h1>
 
 <p>A loja do seu time</p>
 
+<div class="botoes-inicio">
+
+<button class="botao-camisas" onclick="irParaProdutos()">
+Ver camisas
+</button>
+
+<button class="botao-whatsapp" onclick="abrirWhatsApp()">
+WhatsApp — Dúvidas
+</button>
+
+</div>
+
+</div>
+
 </section>
+
+
+<section class="produtos-area" id="produtos-section">
+
+<h2 class="titulo-produtos">
+Nossas camisas
+</h2>
 
 <main class="container">
 
 <div class="produtos" id="produtos"></div>
 
 </main>
+
+</section>
+
 
 <div class="carrinho" id="carrinho">
 
@@ -392,15 +537,18 @@ Continuar comprando
 
 </div>
 
+
 <footer>
 
 MC Sports — A loja do seu time
 
 </footer>
 
+
 <script>
 
 const numeroWhatsApp = "5592994486162";
+
 
 const produtos = [
 
@@ -456,7 +604,9 @@ fotos:[
 
 ];
 
+
 let carrinho=[];
+
 
 function dinheiro(valor){
 
@@ -465,6 +615,34 @@ minimumFractionDigits:2
 });
 
 }
+
+
+function irParaProdutos(){
+
+document
+.getElementById("produtos-section")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function abrirWhatsApp(){
+
+const mensagem=
+"Olá! Estou no site da MC Sports e gostaria de tirar uma dúvida.";
+
+window.open(
+"https://wa.me/"+
+numeroWhatsApp+
+"?text="+
+encodeURIComponent(mensagem),
+"_blank"
+);
+
+}
+
 
 function mostrarProdutos(){
 
@@ -475,6 +653,7 @@ area.innerHTML="";
 produtos.forEach(produto=>{
 
 let galeria="";
+
 
 if(produto.fotos.length>0){
 
@@ -491,6 +670,7 @@ alt="${produto.nome}"
 >
 
 `).join("")}
+
 
 ${produto.fotos.length>1 ? `
 
@@ -528,6 +708,7 @@ FOTO DA CAMISA
 
 }
 
+
 area.innerHTML+=`
 
 <div class="produto">
@@ -539,7 +720,8 @@ ${galeria}
 <h2>${produto.nome}</h2>
 
 <div class="tamanho">
-Tamanho disponível: <strong>${produto.tamanho}</strong>
+Tamanho disponível:
+<strong>${produto.tamanho}</strong>
 </div>
 
 <div class="preco">
@@ -563,6 +745,7 @@ Adicionar ao carrinho
 });
 
 }
+
 
 function mudarFoto(botao,direcao){
 
@@ -596,6 +779,7 @@ fotos[nova].classList.add("ativa");
 
 }
 
+
 function adicionar(id){
 
 const existente=
@@ -620,6 +804,7 @@ abrirCarrinho();
 
 }
 
+
 function atualizarCarrinho(){
 
 const area=document.getElementById("itens");
@@ -629,12 +814,14 @@ area.innerHTML="";
 let total=0;
 let quantidadeTotal=0;
 
+
 if(carrinho.length===0){
 
 area.innerHTML=
 '<div class="vazio">Seu carrinho está vazio.</div>';
 
 }
+
 
 carrinho.forEach(item=>{
 
@@ -647,6 +834,7 @@ produto.preco*item.quantidade;
 total+=subtotal;
 
 quantidadeTotal+=item.quantidade;
+
 
 area.innerHTML+=`
 
@@ -701,6 +889,7 @@ R$ ${dinheiro(subtotal)}
 
 });
 
+
 document.getElementById("total").innerText=
 dinheiro(total);
 
@@ -708,6 +897,7 @@ document.getElementById("contador").innerText=
 quantidadeTotal;
 
 }
+
 
 function alterarQuantidade(id,valor){
 
@@ -718,6 +908,7 @@ if(!item)return;
 
 item.quantidade+=valor;
 
+
 if(item.quantidade<=0){
 
 carrinho=
@@ -725,9 +916,11 @@ carrinho.filter(i=>i.id!==id);
 
 }
 
+
 atualizarCarrinho();
 
 }
+
 
 function abrirCarrinho(){
 
@@ -737,6 +930,7 @@ document
 
 }
 
+
 function fecharCarrinho(){
 
 document
@@ -744,6 +938,7 @@ document
 .classList.remove("aberto");
 
 }
+
 
 function finalizarPedido(){
 
@@ -755,10 +950,12 @@ return;
 
 }
 
+
 let mensagem=
 "Olá! Quero fazer um pedido na MC Sports:%0A%0A";
 
 let total=0;
+
 
 carrinho.forEach(item=>{
 
@@ -770,16 +967,19 @@ produto.preco*item.quantidade;
 
 total+=subtotal;
 
+
 mensagem+=
 `${item.quantidade}x ${produto.nome} - Tamanho ${produto.tamanho} - R$ ${dinheiro(subtotal)}%0A`;
 
 });
+
 
 mensagem+=
 `%0ATotal: R$ ${dinheiro(total)}%0A%0A`;
 
 mensagem+=
 "Gostaria de confirmar a disponibilidade e combinar a entrega.";
+
 
 window.open(
 "https://wa.me/"+
@@ -791,7 +991,9 @@ mensagem,
 
 }
 
+
 mostrarProdutos();
+
 atualizarCarrinho();
 
 </script>
