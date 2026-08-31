@@ -168,6 +168,21 @@ header{
     font-weight:bold;
     cursor:pointer;
 }
+.continuar{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:white;
+    color:#111;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.continuar:hover{
+    background:#f2f2f2;
+}
 .vazio{
     text-align:center;
     color:#777;
@@ -215,6 +230,9 @@ Total: R$ <span id="total">0,00</span>
 </div>
 <button class="whatsapp" onclick="finalizarPedido()">
 Finalizar pedido pelo WhatsApp
+</button>
+<button class="continuar" onclick="fecharCarrinho()">
+Continuar comprando
 </button>
 </div>
 <footer>
