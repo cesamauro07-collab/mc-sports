@@ -204,6 +204,24 @@ header{
     border-bottom:1px solid #eee;
 }
 
+.item-produto{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.item-produto img{
+    width:75px;
+    height:75px;
+    object-fit:cover;
+    border-radius:8px;
+    background:#eee;
+}
+
+.item-info{
+    flex:1;
+}
+
 .quantidade{
     display:flex;
     align-items:center;
@@ -591,6 +609,15 @@ area.innerHTML+=`
 
 <div class="item">
 
+<div class="item-produto">
+
+<img
+src="${produto.fotos[0]}"
+alt="${produto.nome}"
+>
+
+<div class="item-info">
+
 <strong>
 ${produto.nome}
 </strong>
@@ -618,6 +645,10 @@ ${item.quantidade}
 <span>
 R$ ${dinheiro(subtotal)}
 </span>
+
+</div>
+
+</div>
 
 </div>
 
