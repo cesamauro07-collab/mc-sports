@@ -5,203 +5,183 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MC Sports</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 body{
-font-family:Arial,sans-serif;
-background:#f5f5f5;
-color:#111;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f4f4;
+    color:#111;
 }
 header{
-background:#000;
-color:#fff;
-padding:18px;
+    background:#050505;
+    color:white;
+    padding:18px;
 }
 .topo{
-max-width:1100px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 .logo{
-font-size:25px;
-font-weight:900;
+    font-size:25px;
+    font-weight:900;
 }
 .slogan{
-font-size:12px;
-color:#aaa;
-margin-top:3px;
+    color:#aaa;
+    font-size:13px;
+    margin-top:4px;
 }
 .carrinho-btn{
-background:#fff;
-border:0;
-border-radius:9px;
-padding:11px 15px;
-font-weight:bold;
-cursor:pointer;
+    background:white;
+    color:#000;
+    border:0;
+    padding:11px 15px;
+    border-radius:9px;
+    font-weight:bold;
+    cursor:pointer;
 }
 .hero{
-background:#111;
-color:#fff;
-text-align:center;
-padding:55px 20px;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:55px 20px;
 }
 .hero h1{
-font-size:36px;
-margin-bottom:10px;
+    font-size:36px;
+    margin-bottom:10px;
 }
 .hero p{
-color:#ccc;
+    color:#ccc;
 }
 .container{
-max-width:1100px;
-margin:30px auto;
-padding:0 18px;
-}
-.filtros{
-display:flex;
-gap:10px;
-overflow-x:auto;
-margin-bottom:25px;
-}
-.filtros button{
-background:#fff;
-border:1px solid #ddd;
-border-radius:20px;
-padding:10px 16px;
-white-space:nowrap;
-cursor:pointer;
-}
-.filtros button:hover{
-background:#000;
-color:#fff;
+    max-width:1100px;
+    margin:30px auto;
+    padding:0 18px;
 }
 .produtos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 .produto{
-background:#fff;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 3px 12px #0001;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 3px 12px #0001;
 }
 .foto{
-height:260px;
-background:#ddd;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#777;
-font-weight:bold;
+    height:270px;
+    background:#ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#777;
+    font-weight:bold;
 }
 .info{
-padding:16px;
+    padding:16px;
 }
 .info h2{
-font-size:19px;
+    font-size:20px;
 }
-.info p{
-color:#777;
-margin:6px 0 12px;
+.tamanho{
+    color:#777;
+    margin:7px 0;
 }
 .preco{
-font-size:21px;
-font-weight:bold;
-margin-bottom:12px;
-}
-select{
-width:100%;
-padding:11px;
-border:1px solid #ddd;
-border-radius:8px;
-margin-bottom:10px;
+    font-size:22px;
+    font-weight:bold;
+    margin:12px 0;
 }
 .adicionar{
-width:100%;
-padding:12px;
-background:#000;
-color:#fff;
-border:0;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    padding:13px;
+    background:#000;
+    color:white;
+    border:0;
+    border-radius:9px;
+    font-weight:bold;
+    cursor:pointer;
 }
 .adicionar:hover{
-background:#222;
+    background:#222;
 }
 .carrinho{
-position:fixed;
-right:0;
-top:0;
-width:min(420px,100%);
-height:100%;
-background:#fff;
-z-index:20;
-padding:22px;
-overflow-y:auto;
-box-shadow:-5px 0 20px #0003;
-display:none;
+    position:fixed;
+    right:0;
+    top:0;
+    width:min(420px,100%);
+    height:100%;
+    background:white;
+    z-index:20;
+    padding:22px;
+    overflow-y:auto;
+    box-shadow:-5px 0 20px #0003;
+    display:none;
 }
 .carrinho.aberto{
-display:block;
+    display:block;
 }
 .fechar{
-float:right;
-border:0;
-background:#eee;
-padding:8px 12px;
-border-radius:7px;
-cursor:pointer;
+    float:right;
+    border:0;
+    background:#eee;
+    padding:8px 12px;
+    border-radius:7px;
+    cursor:pointer;
 }
 .item{
-padding:15px 0;
-border-bottom:1px solid #eee;
+    padding:16px 0;
+    border-bottom:1px solid #eee;
 }
 .quantidade{
-display:flex;
-align-items:center;
-gap:10px;
-margin-top:9px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
 }
 .quantidade button{
-width:30px;
-height:30px;
-border:1px solid #ddd;
-background:#fff;
-border-radius:5px;
+    width:30px;
+    height:30px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:5px;
 }
 .total{
-font-size:22px;
-font-weight:bold;
-margin:25px 0;
+    font-size:22px;
+    font-weight:bold;
+    margin:25px 0;
 }
 .whatsapp{
-width:100%;
-padding:15px;
-border:0;
-border-radius:10px;
-background:#25D366;
-color:#fff;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:10px;
+    background:#25D366;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 .vazio{
-text-align:center;
-color:#777;
-margin-top:40px;
+    text-align:center;
+    color:#777;
+    margin-top:40px;
 }
 footer{
-text-align:center;
-padding:40px 20px;
-color:#777;
+    text-align:center;
+    padding:40px 20px;
+    color:#777;
 }
 @media(max-width:500px){
-.hero h1{
-font-size:28px;
-}
+    .hero h1{
+        font-size:28px;
+    }
 }
 </style>
 </head>
@@ -219,28 +199,9 @@ Carrinho (<span id="contador">0</span>)
 </header>
 <section class="hero">
 <h1>MC Sports</h1>
-<p>
-A loja do seu time.
-</p>
+<p>A loja do seu time</p>
 </section>
 <main class="container">
-<div class="filtros">
-
-Todos
-
-<button onclick="filtrar('Barcelona')">
-Barcelona
-</button>
-<button onclick="filtrar('Real Madrid')">
-Real Madrid
-</button>
-<button onclick="filtrar('Brasil')">
-Brasil
-</button>
-<button onclick="filtrar('Flamengo')">
-Flamengo
-</button>
-</div>
 <div class="produtos" id="produtos"></div>
 </main>
 <div class="carrinho" id="carrinho">
@@ -266,27 +227,31 @@ const numeroWhatsApp = "5592994486162";
 const produtos = [
 {
 id:1,
-time:"Barcelona",
-nome:"Camisa Barcelona 2026",
-preco:89.90
+time:"Chelsea",
+nome:"Camisa Chelsea",
+tamanho:"G",
+preco:60
 },
 {
 id:2,
-time:"Real Madrid",
-nome:"Camisa Real Madrid 2026",
-preco:89.90
+time:"Corinthians",
+nome:"Camisa Corinthians",
+tamanho:"M",
+preco:60
 },
 {
 id:3,
-time:"Brasil",
-nome:"Camisa Brasil",
-preco:89.90
+time:"Flamengo",
+nome:"Camisa Flamengo",
+tamanho:"M",
+preco:60
 },
 {
 id:4,
-time:"Flamengo",
-nome:"Camisa Flamengo 2026",
-preco:89.90
+time:"Milan",
+nome:"Camisa Milan",
+tamanho:"M",
+preco:60
 }
 ];
 let carrinho=[];
@@ -295,10 +260,10 @@ return valor.toLocaleString("pt-BR",{
 minimumFractionDigits:2
 });
 }
-function mostrarProdutos(lista=produtos){
+function mostrarProdutos(){
 const area=document.getElementById("produtos");
 area.innerHTML="";
-lista.forEach(produto=>{
+produtos.forEach(produto=>{
 area.innerHTML+=`
 <div class="produto">
 <div class="foto">
@@ -306,18 +271,12 @@ FOTO DA CAMISA
 </div>
 <div class="info">
 <h2>${produto.nome}</h2>
-<p>${produto.time}</p>
+<div class="tamanho">
+Tamanho disponível: <strong>${produto.tamanho}</strong>
+</div>
 <div class="preco">
 R$ ${dinheiro(produto.preco)}
 </div>
-<select id="tamanho-${produto.id}">
-<option value="P">Tamanho P</option>
-<option value="M" selected>
-Tamanho M
-</option>
-<option value="G">Tamanho G</option>
-<option value="GG">Tamanho GG</option>
-</select>
 <button
 class="adicionar"
 onclick="adicionar(${produto.id})">
@@ -328,34 +287,16 @@ Adicionar ao carrinho
 `;
 });
 }
-function filtrar(time){
-if(time==="todos"){
-mostrarProdutos();
-}else{
-mostrarProdutos(
-produtos.filter(p=>p.time===time)
-);
-}
-}
 function adicionar(id){
 const produto=
 produtos.find(p=>p.id===id);
-const tamanho=
-document.getElementById(
-"tamanho-"+id
-).value;
 const existente=
-carrinho.find(
-item=>
-item.id===id &&
-item.tamanho===tamanho
-);
+carrinho.find(item=>item.id===id);
 if(existente){
 existente.quantidade++;
 }else{
 carrinho.push({
 id:id,
-tamanho:tamanho,
 quantidade:1
 });
 }
@@ -363,8 +304,7 @@ atualizarCarrinho();
 abrirCarrinho();
 }
 function atualizarCarrinho(){
-const area=
-document.getElementById("itens");
+const area=document.getElementById("itens");
 area.innerHTML="";
 let total=0;
 let quantidadeTotal=0;
@@ -386,24 +326,16 @@ ${produto.nome}
 </strong>
 <br>
 <small>
-Tamanho: ${item.tamanho}
+Tamanho ${produto.tamanho}
 </small>
 <div class="quantidade">
-<button onclick="alterarQuantidade(
-${item.id},
-'${item.tamanho}',
--1
-)">
+<button onclick="alterarQuantidade(${item.id},-1)">
 -
 </button>
 <span>
 ${item.quantidade}
 </span>
-<button onclick="alterarQuantidade(
-${item.id},
-'${item.tamanho}',
-1
-)">
+<button onclick="alterarQuantidade(${item.id},1)">
 +
 </button>
 <span>
@@ -418,26 +350,14 @@ dinheiro(total);
 document.getElementById("contador").innerText=
 quantidadeTotal;
 }
-function alterarQuantidade(
-id,
-tamanho,
-valor
-){
+function alterarQuantidade(id,valor){
 const item=
-carrinho.find(
-i=>
-i.id===id &&
-i.tamanho===tamanho
-);
+carrinho.find(i=>i.id===id);
 if(!item)return;
 item.quantidade+=valor;
 if(item.quantidade<=0){
 carrinho=
-carrinho.filter(
-i=>
-!(i.id===id &&
-i.tamanho===tamanho)
-);
+carrinho.filter(i=>i.id!==id);
 }
 atualizarCarrinho();
 }
@@ -466,7 +386,7 @@ const subtotal=
 produto.preco*item.quantidade;
 total+=subtotal;
 mensagem+=
-`${item.quantidade}x ${produto.nome} - Tamanho ${item.tamanho} - R$ ${dinheiro(subtotal)}%0A`;
+`${item.quantidade}x ${produto.nome} - Tamanho ${produto.tamanho} - R$ ${dinheiro(subtotal)}%0A`;
 });
 mensagem+=
 `%0ATotal: R$ ${dinheiro(total)}%0A%0A`;
