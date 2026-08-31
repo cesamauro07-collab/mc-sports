@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MC Sports</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+color:#111;
+}
+header{
+background:#000;
+color:#fff;
+padding:18px;
+}
+.topo{
+max-width:1100px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.logo{
+font-size:25px;
+font-weight:900;
+}
+.slogan{
+font-size:12px;
+color:#aaa;
+margin-top:3px;
+}
+.carrinho-btn{
+background:#fff;
+border:0;
+border-radius:9px;
+padding:11px 15px;
+font-weight:bold;
+cursor:pointer;
+}
+.hero{
+background:#111;
+color:#fff;
+text-align:center;
+padding:55px 20px;
+}
+.hero h1{
+font-size:36px;
+margin-bottom:10px;
+}
+.hero p{
+color:#ccc;
+}
+.container{
+max-width:1100px;
+margin:30px auto;
+padding:0 18px;
+}
+.filtros{
+display:flex;
+gap:10px;
+overflow-x:auto;
+margin-bottom:25px;
+}
+.filtros button{
+background:#fff;
+border:1px solid #ddd;
+border-radius:20px;
+padding:10px 16px;
+white-space:nowrap;
+cursor:pointer;
+}
+.filtros button:hover{
+background:#000;
+color:#fff;
+}
+.produtos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+.produto{
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 3px 12px #0001;
+}
+.foto{
+height:260px;
+background:#ddd;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#777;
+font-weight:bold;
+}
+.info{
+padding:16px;
+}
+.info h2{
+font-size:19px;
+}
+.info p{
+color:#777;
+margin:6px 0 12px;
+}
+.preco{
+font-size:21px;
+font-weight:bold;
+margin-bottom:12px;
+}
+select{
+width:100%;
+padding:11px;
+border:1px solid #ddd;
+border-radius:8px;
+margin-bottom:10px;
+}
+.adicionar{
+width:100%;
+padding:12px;
+background:#000;
+color:#fff;
+border:0;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+.adicionar:hover{
+background:#222;
+}
+.carrinho{
+position:fixed;
+right:0;
+top:0;
+width:min(420px,100%);
+height:100%;
+background:#fff;
+z-index:20;
+padding:22px;
+overflow-y:auto;
+box-shadow:-5px 0 20px #0003;
+display:none;
+}
+.carrinho.aberto{
+display:block;
+}
+.fechar{
+float:right;
+border:0;
+background:#eee;
+padding:8px 12px;
+border-radius:7px;
+cursor:pointer;
+}
+.item{
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+.quantidade{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:9px;
+}
+.quantidade button{
+width:30px;
+height:30px;
+border:1px solid #ddd;
+background:#fff;
+border-radius:5px;
+}
+.total{
+font-size:22px;
+font-weight:bold;
+margin:25px 0;
+}
+.whatsapp{
+width:100%;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#25D366;
+color:#fff;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+.vazio{
+text-align:center;
+color:#777;
+margin-top:40px;
+}
+footer{
+text-align:center;
+padding:40px 20px;
+color:#777;
+}
+@media(max-width:500px){
+.hero h1{
+font-size:28px;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="topo">
+<div>
+<div class="logo">MC SPORTS</div>
+<div class="slogan">A loja do seu time</div>
+</div>
+<button class="carrinho-btn" onclick="abrirCarrinho()">
+Carrinho (<span id="contador">0</span>)
+</button>
+</div>
+</header>
+<section class="hero">
+<h1>MC Sports</h1>
+<p>
+A loja do seu time.
+</p>
+</section>
+<main class="container">
+<div class="filtros">
+
+Todos
+
+<button onclick="filtrar('Barcelona')">
+Barcelona
+</button>
+<button onclick="filtrar('Real Madrid')">
+Real Madrid
+</button>
+<button onclick="filtrar('Brasil')">
+Brasil
+</button>
+<button onclick="filtrar('Flamengo')">
+Flamengo
+</button>
+</div>
+<div class="produtos" id="produtos"></div>
+</main>
+<div class="carrinho" id="carrinho">
+<button class="fechar" onclick="fecharCarrinho()">
+Fechar
+</button>
+<h2>Seu carrinho</h2>
+<div id="itens"></div>
+<div class="total">
+Total: R$ <span id="total">0,00</span>
+</div>
+<button class="whatsapp" onclick="finalizarPedido()">
+Finalizar pedido pelo WhatsApp
+</button>
+</div>
+<footer>
+
+MC Sports — A loja do seu time
+
+</footer>
+<script>
+const numeroWhatsApp = "5592994486162";
+const produtos = [
+{
+id:1,
+time:"Barcelona",
+nome:"Camisa Barcelona 2026",
+preco:89.90
+},
+{
+id:2,
+time:"Real Madrid",
+nome:"Camisa Real Madrid 2026",
+preco:89.90
+},
+{
+id:3,
+time:"Brasil",
+nome:"Camisa Brasil",
+preco:89.90
+},
+{
+id:4,
+time:"Flamengo",
+nome:"Camisa Flamengo 2026",
+preco:89.90
+}
+];
+let carrinho=[];
+function dinheiro(valor){
+return valor.toLocaleString("pt-BR",{
+minimumFractionDigits:2
+});
+}
+function mostrarProdutos(lista=produtos){
+const area=document.getElementById("produtos");
+area.innerHTML="";
+lista.forEach(produto=>{
+area.innerHTML+=`
+<div class="produto">
+<div class="foto">
+FOTO DA CAMISA
+</div>
+<div class="info">
+<h2>${produto.nome}</h2>
+<p>${produto.time}</p>
+<div class="preco">
+R$ ${dinheiro(produto.preco)}
+</div>
+<select id="tamanho-${produto.id}">
+<option value="P">Tamanho P</option>
+<option value="M" selected>
+Tamanho M
+</option>
+<option value="G">Tamanho G</option>
+<option value="GG">Tamanho GG</option>
+</select>
+<button
+class="adicionar"
+onclick="adicionar(${produto.id})">
+Adicionar ao carrinho
+</button>
+</div>
+</div>
+`;
+});
+}
+function filtrar(time){
+if(time==="todos"){
+mostrarProdutos();
+}else{
+mostrarProdutos(
+produtos.filter(p=>p.time===time)
+);
+}
+}
+function adicionar(id){
+const produto=
+produtos.find(p=>p.id===id);
+const tamanho=
+document.getElementById(
+"tamanho-"+id
+).value;
+const existente=
+carrinho.find(
+item=>
+item.id===id &&
+item.tamanho===tamanho
+);
+if(existente){
+existente.quantidade++;
+}else{
+carrinho.push({
+id:id,
+tamanho:tamanho,
+quantidade:1
+});
+}
+atualizarCarrinho();
+abrirCarrinho();
+}
+function atualizarCarrinho(){
+const area=
+document.getElementById("itens");
+area.innerHTML="";
+let total=0;
+let quantidadeTotal=0;
+if(carrinho.length===0){
+area.innerHTML=
+'<div class="vazio">Seu carrinho está vazio.</div>';
+}
+carrinho.forEach(item=>{
+const produto=
+produtos.find(p=>p.id===item.id);
+const subtotal=
+produto.preco*item.quantidade;
+total+=subtotal;
+quantidadeTotal+=item.quantidade;
+area.innerHTML+=`
+<div class="item">
+<strong>
+${produto.nome}
+</strong>
+<br>
+<small>
+Tamanho: ${item.tamanho}
+</small>
+<div class="quantidade">
+<button onclick="alterarQuantidade(
+${item.id},
+'${item.tamanho}',
+-1
+)">
+-
+</button>
+<span>
+${item.quantidade}
+</span>
+<button onclick="alterarQuantidade(
+${item.id},
+'${item.tamanho}',
+1
+)">
++
+</button>
+<span>
+R$ ${dinheiro(subtotal)}
+</span>
+</div>
+</div>
+`;
+});
+document.getElementById("total").innerText=
+dinheiro(total);
+document.getElementById("contador").innerText=
+quantidadeTotal;
+}
+function alterarQuantidade(
+id,
+tamanho,
+valor
+){
+const item=
+carrinho.find(
+i=>
+i.id===id &&
+i.tamanho===tamanho
+);
+if(!item)return;
+item.quantidade+=valor;
+if(item.quantidade<=0){
+carrinho=
+carrinho.filter(
+i=>
+!(i.id===id &&
+i.tamanho===tamanho)
+);
+}
+atualizarCarrinho();
+}
+function abrirCarrinho(){
+document
+.getElementById("carrinho")
+.classList.add("aberto");
+}
+function fecharCarrinho(){
+document
+.getElementById("carrinho")
+.classList.remove("aberto");
+}
+function finalizarPedido(){
+if(carrinho.length===0){
+alert("Seu carrinho está vazio.");
+return;
+}
+let mensagem=
+"Olá! Quero fazer um pedido na MC Sports:%0A%0A";
+let total=0;
+carrinho.forEach(item=>{
+const produto=
+produtos.find(p=>p.id===item.id);
+const subtotal=
+produto.preco*item.quantidade;
+total+=subtotal;
+mensagem+=
+`${item.quantidade}x ${produto.nome} - Tamanho ${item.tamanho} - R$ ${dinheiro(subtotal)}%0A`;
+});
+mensagem+=
+`%0ATotal: R$ ${dinheiro(total)}%0A%0A`;
+mensagem+=
+"Gostaria de confirmar a disponibilidade e combinar a entrega.";
+window.open(
+"https://wa.me/"+
+numeroWhatsApp+
+"?text="+
+mensagem,
+"_blank"
+);
+}
+mostrarProdutos();
+atualizarCarrinho();
+</script>
+</body>
+</html>
