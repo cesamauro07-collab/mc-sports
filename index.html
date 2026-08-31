@@ -10,10 +10,6 @@
 
 <style>
 
-/* =========================
-   CONFIGURAÇÕES GERAIS
-========================= */
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -47,7 +43,6 @@ header{
 .topo{
     max-width:1100px;
     margin:auto;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -67,20 +62,18 @@ header{
 }
 
 
-/* CARRINHO DO TOPO */
+/* =========================
+   CARRINHO
+========================= */
 
 .carrinho-btn{
-    background:white;
-    color:#004d98;
+    position:relative;
 
+    background:transparent;
     border:0;
 
-    width:46px;
-    height:46px;
-
-    border-radius:50%;
-
-    font-size:21px;
+    width:48px;
+    height:48px;
 
     cursor:pointer;
 
@@ -88,12 +81,56 @@ header{
     justify-content:center;
     align-items:center;
 
-    box-shadow:0 3px 10px #0003;
+    color:#ffd400;
+}
+
+
+/* ÍCONE DO CARRINHO */
+
+.icone-carrinho{
+    width:31px;
+    height:31px;
+
+    fill:#ffd400;
+
+    filter:drop-shadow(0 2px 2px #0004);
+}
+
+
+/* CONTADOR */
+
+.contador{
+
+    position:absolute;
+
+    top:-2px;
+    right:-4px;
+
+    min-width:22px;
+    height:22px;
+
+    padding:0 5px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ff8c00;
+    color:white;
+
+    border-radius:50%;
+
+    border:2px solid #004d98;
+
+    font-size:12px;
+    font-weight:900;
+
+    line-height:1;
 }
 
 
 /* =========================
-   SISTEMA DE PÁGINAS
+   PÁGINAS
 ========================= */
 
 .pagina{
@@ -106,10 +143,11 @@ header{
 
 
 /* =========================
-   PÁGINA INICIAL
+   HOME
 ========================= */
 
 .inicio{
+
     min-height:calc(100vh - 77px);
 
     display:flex;
@@ -132,7 +170,7 @@ header{
 
 
 /* =========================
-   LOGO PRINCIPAL
+   LOGO
 ========================= */
 
 .logo-principal{
@@ -147,13 +185,9 @@ header{
     filter:drop-shadow(0 10px 18px #0006);
 }
 
-
-/* escudo externo */
-
 .escudo-externo{
 
     position:absolute;
-
     inset:0;
 
     background:#7a1230;
@@ -171,13 +205,9 @@ header{
     );
 }
 
-
-/* escudo interno */
-
 .escudo-interno{
 
     position:absolute;
-
     inset:7px;
 
     background:#004d98;
@@ -195,9 +225,6 @@ header{
     );
 }
 
-
-/* linha central */
-
 .logo-linha{
 
     position:absolute;
@@ -211,17 +238,11 @@ header{
     left:50%;
 
     transform:translate(-50%,-50%);
-
-    opacity:.9;
 }
-
-
-/* MC */
 
 .logo-mc{
 
     position:absolute;
-
     z-index:2;
 
     top:65px;
@@ -244,17 +265,12 @@ header{
     -1px -1px 0 #fff;
 }
 
-
-/* SPORTS */
-
 .logo-sports{
 
     position:absolute;
-
     z-index:3;
 
     bottom:31px;
-
     left:50%;
 
     transform:translateX(-50%);
@@ -270,17 +286,12 @@ header{
     white-space:nowrap;
 }
 
-
-/* MC SPORTS pequeno */
-
 .logo-ano{
 
     position:absolute;
-
     z-index:3;
 
     top:27px;
-
     left:50%;
 
     transform:translateX(-50%);
@@ -298,7 +309,7 @@ header{
 
 
 /* =========================
-   TEXTO DA HOME
+   TEXTO HOME
 ========================= */
 
 .inicio h1{
@@ -315,7 +326,6 @@ header{
 
     text-shadow:
     3px 4px 0 #7a1230;
-
 }
 
 .inicio p{
@@ -325,12 +335,11 @@ header{
     font-size:17px;
 
     margin:8px 0 28px;
-
 }
 
 
 /* =========================
-   BOTÕES DA HOME
+   BOTÕES
 ========================= */
 
 .botoes-inicio{
@@ -362,27 +371,23 @@ header{
     cursor:pointer;
 }
 
-
 .botao-camisas{
 
     background:white;
 
     color:#004d98;
-
 }
-
 
 .botao-whatsapp{
 
     background:#25D366;
 
     color:white;
-
 }
 
 
 /* =========================
-   PÁGINA DOS PRODUTOS
+   PRODUTOS
 ========================= */
 
 .produtos-area{
@@ -392,9 +397,7 @@ header{
     min-height:calc(100vh - 77px);
 
     padding:30px 0 55px;
-
 }
-
 
 .barra-produtos{
 
@@ -411,7 +414,6 @@ header{
     align-items:center;
 }
 
-
 .titulo-produtos{
 
     color:white;
@@ -420,7 +422,6 @@ header{
 
     font-weight:900;
 }
-
 
 .voltar{
 
@@ -439,7 +440,6 @@ header{
     cursor:pointer;
 }
 
-
 .container{
 
     max-width:1100px;
@@ -448,7 +448,6 @@ header{
 
     padding:0 18px;
 }
-
 
 .produtos{
 
@@ -480,7 +479,6 @@ header{
     box-shadow .2s;
 }
 
-
 .produto:hover{
 
     transform:translateY(-3px);
@@ -504,7 +502,6 @@ header{
     overflow:hidden;
 }
 
-
 .galeria img{
 
     width:100%;
@@ -516,14 +513,10 @@ header{
     display:none;
 }
 
-
 .galeria img.ativa{
 
     display:block;
 }
-
-
-/* SETAS */
 
 .seta{
 
@@ -550,20 +543,15 @@ header{
     cursor:pointer;
 
     z-index:2;
-
-    box-shadow:0 2px 8px #0002;
 }
-
 
 .esquerda{
     left:10px;
 }
 
-
 .direita{
     right:10px;
 }
-
 
 .sem-foto{
 
@@ -590,7 +578,6 @@ header{
     padding:18px;
 }
 
-
 .info h2{
 
     font-size:19px;
@@ -599,7 +586,6 @@ header{
 
     margin-bottom:8px;
 }
-
 
 .tamanho{
 
@@ -610,7 +596,6 @@ header{
     margin:6px 0;
 }
 
-
 .preco{
 
     font-size:24px;
@@ -619,7 +604,6 @@ header{
 
     margin:14px 0;
 }
-
 
 .adicionar{
 
@@ -642,7 +626,6 @@ header{
     font-size:15px;
 }
 
-
 .adicionar:hover{
 
     background:#003b75;
@@ -650,7 +633,7 @@ header{
 
 
 /* =========================
-   CARRINHO
+   CARRINHO LATERAL
 ========================= */
 
 .carrinho{
@@ -658,7 +641,6 @@ header{
     position:fixed;
 
     right:0;
-
     top:0;
 
     width:min(420px,100%);
@@ -678,12 +660,10 @@ header{
     display:none;
 }
 
-
 .carrinho.aberto{
 
     display:block;
 }
-
 
 .fechar{
 
@@ -700,14 +680,12 @@ header{
     cursor:pointer;
 }
 
-
 .item{
 
     padding:16px 0;
 
     border-bottom:1px solid #eee;
 }
-
 
 .item-produto{
 
@@ -717,7 +695,6 @@ header{
 
     align-items:center;
 }
-
 
 .item-produto img{
 
@@ -732,12 +709,10 @@ header{
     background:#eee;
 }
 
-
 .item-info{
 
     flex:1;
 }
-
 
 .quantidade{
 
@@ -749,7 +724,6 @@ header{
 
     margin-top:10px;
 }
-
 
 .quantidade button{
 
@@ -766,7 +740,6 @@ header{
     cursor:pointer;
 }
 
-
 .total{
 
     font-size:22px;
@@ -778,7 +751,7 @@ header{
 
 
 /* =========================
-   WHATSAPP
+   BOTÃO WHATSAPP
 ========================= */
 
 .whatsapp{
@@ -802,7 +775,6 @@ header{
     cursor:pointer;
 }
 
-
 .continuar{
 
     width:100%;
@@ -825,7 +797,6 @@ header{
 
     cursor:pointer;
 }
-
 
 .vazio{
 
@@ -862,94 +833,66 @@ footer{
     .inicio h1{
 
         font-size:43px;
-
     }
-
 
     .logo-principal{
 
         width:145px;
 
         height:165px;
-
     }
-
 
     .logo-mc{
 
         font-size:50px;
 
         top:57px;
-
     }
-
 
     .logo-sports{
 
         bottom:27px;
 
         font-size:12px;
-
     }
-
-
-    .barra-produtos{
-
-        align-items:center;
-
-    }
-
 
     .titulo-produtos{
 
         font-size:25px;
-
     }
-
 
     .produtos{
 
         grid-template-columns:1fr 1fr;
 
         gap:12px;
-
     }
-
 
     .galeria{
 
         height:260px;
-
     }
-
 
     .info{
 
         padding:13px;
-
     }
-
 
     .info h2{
 
         font-size:16px;
-
     }
-
 
     .preco{
 
         font-size:20px;
-
     }
-
 
     .adicionar{
 
         padding:11px;
 
         font-size:13px;
-
     }
 
 }
@@ -988,7 +931,29 @@ class="carrinho-btn"
 onclick="abrirCarrinho()"
 aria-label="Abrir carrinho">
 
-🛒
+
+<!-- ÍCONE DE CARRINHO -->
+
+<svg
+class="icone-carrinho"
+viewBox="0 0 24 24"
+xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45C5.09 14.32 5 14.65 5 15c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L20.88 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+
+</svg>
+
+
+<!-- CONTADOR -->
+
+<span
+class="contador"
+id="contador">
+
+0
+
+</span>
+
 
 </button>
 
@@ -999,7 +964,7 @@ aria-label="Abrir carrinho">
 
 
 <!-- =========================
-     HOME
+     PÁGINA INICIAL
 ========================= -->
 
 <section
@@ -1010,8 +975,6 @@ id="pagina-inicio">
 
 <div>
 
-
-<!-- LOGO -->
 
 <div class="logo-principal">
 
@@ -1069,7 +1032,6 @@ WhatsApp — Dúvidas
 
 </div>
 
-
 </div>
 
 </div>
@@ -1091,7 +1053,6 @@ id="pagina-produtos">
 
 <div class="barra-produtos">
 
-
 <h2 class="titulo-produtos">
 Nossas camisas
 </h2>
@@ -1104,7 +1065,6 @@ onclick="voltarInicio()">
 ← Voltar
 
 </button>
-
 
 </div>
 
@@ -1150,7 +1110,6 @@ Seu carrinho
 
 
 <div id="itens">
-
 </div>
 
 
@@ -1187,10 +1146,6 @@ Continuar comprando
 
 
 
-<!-- =========================
-     RODAPÉ
-========================= -->
-
 <footer>
 
 MC Sports — A loja do seu time
@@ -1215,6 +1170,7 @@ const numeroWhatsApp = "5592994486162";
 ========================= */
 
 const produtos = [
+
 
 /* CHELSEA */
 
@@ -1309,15 +1265,20 @@ let carrinho=[];
 
 
 
-/* FORMATA DINHEIRO */
+/* =========================
+   DINHEIRO
+========================= */
 
 function dinheiro(valor){
 
     return valor.toLocaleString(
+
         "pt-BR",
+
         {
             minimumFractionDigits:2
         }
+
     );
 
 }
@@ -1325,36 +1286,21 @@ function dinheiro(valor){
 
 
 /* =========================
-   TROCAR PÁGINA
+   ABRIR PRODUTOS
 ========================= */
 
 function abrirProdutos(){
 
     document
     .getElementById("pagina-inicio")
-    .classList.remove("ativa");
+    .classList
+    .remove("ativa");
 
 
     document
     .getElementById("pagina-produtos")
-    .classList.add("ativa");
-
-
-    window.scrollTo(0,0);
-
-}
-
-
-function voltarInicio(){
-
-    document
-    .getElementById("pagina-produtos")
-    .classList.remove("ativa");
-
-
-    document
-    .getElementById("pagina-inicio")
-    .classList.add("ativa");
+    .classList
+    .add("ativa");
 
 
     window.scrollTo(0,0);
@@ -1364,7 +1310,31 @@ function voltarInicio(){
 
 
 /* =========================
-   WHATSAPP — DÚVIDAS
+   VOLTAR PARA INÍCIO
+========================= */
+
+function voltarInicio(){
+
+    document
+    .getElementById("pagina-produtos")
+    .classList
+    .remove("ativa");
+
+
+    document
+    .getElementById("pagina-inicio")
+    .classList
+    .add("ativa");
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+
+/* =========================
+   WHATSAPP
 ========================= */
 
 function abrirWhatsApp(){
@@ -1413,26 +1383,35 @@ function mostrarProdutos(){
             <div class="galeria">
 
                 ${produto.fotos.map(
+
                     (foto,index)=>`
 
                     <img
+
                     src="${foto}"
+
                     class="${index===0 ? "ativa" : ""}"
+
                     alt="${produto.nome}"
+
                     >
 
                     `
+
                 ).join("")}
 
 
                 ${
                     produto.fotos.length>1
+
                     ?
 
                     `
 
                     <button
+
                     class="seta esquerda"
+
                     onclick="mudarFoto(this,-1)">
 
                     ‹
@@ -1441,7 +1420,9 @@ function mostrarProdutos(){
 
 
                     <button
+
                     class="seta direita"
+
                     onclick="mudarFoto(this,1)">
 
                     ›
@@ -1453,6 +1434,7 @@ function mostrarProdutos(){
                     :
 
                     ""
+
                 }
 
             </div>
@@ -1513,7 +1495,9 @@ function mostrarProdutos(){
 
 
                 <button
+
                 class="adicionar"
+
                 onclick="adicionar(${produto.id})">
 
                     Adicionar ao carrinho
@@ -1533,7 +1517,7 @@ function mostrarProdutos(){
 
 
 /* =========================
-   MUDAR FOTO
+   TROCAR FOTO
 ========================= */
 
 function mudarFoto(botao,direcao){
@@ -1550,11 +1534,11 @@ function mudarFoto(botao,direcao){
 
 
     fotos.forEach(
+
         (foto,index)=>{
 
             if(
-                foto.classList
-                .contains("ativa")
+                foto.classList.contains("ativa")
             ){
 
                 atual=index;
@@ -1562,6 +1546,7 @@ function mudarFoto(botao,direcao){
             }
 
         }
+
     );
 
 
@@ -1598,7 +1583,7 @@ function mudarFoto(botao,direcao){
 
 
 /* =========================
-   ADICIONAR AO CARRINHO
+   ADICIONAR
 ========================= */
 
 function adicionar(id){
@@ -1690,8 +1675,11 @@ function atualizarCarrinho(){
             <div class="item-produto">
 
                 <img
+
                 src="${produto.fotos[0]}"
+
                 alt="${produto.nome}"
+
                 >
 
 
@@ -1902,7 +1890,7 @@ function finalizarPedido(){
 
 
 /* =========================
-   INICIAR SITE
+   INICIAR
 ========================= */
 
 mostrarProdutos();
