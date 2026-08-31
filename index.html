@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,9 +25,7 @@ body{
     color:#111;
 }
 
-/* =========================
-   TOPO
-========================= */
+/* TOPO */
 
 header{
     background:#004d98;
@@ -60,9 +57,7 @@ header{
     margin-top:3px;
 }
 
-/* =========================
-   CARRINHO
-========================= */
+/* CARRINHO */
 
 .carrinho-btn{
     position:relative;
@@ -101,9 +96,7 @@ header{
     font-weight:900;
 }
 
-/* =========================
-   ANIMAÇÃO
-========================= */
+/* ANIMAÇÃO */
 
 .animacao-carrinho{
     position:fixed;
@@ -116,11 +109,11 @@ header{
     box-shadow:0 5px 15px #0004;
 
     transition:
-        left .65s cubic-bezier(.2,.8,.3,1),
-        top .65s cubic-bezier(.2,.8,.3,1),
-        width .65s ease,
-        height .65s ease,
-        opacity .65s ease;
+    left .65s cubic-bezier(.2,.8,.3,1),
+    top .65s cubic-bezier(.2,.8,.3,1),
+    width .65s ease,
+    height .65s ease,
+    opacity .65s ease;
 }
 
 .confirmacao{
@@ -135,12 +128,11 @@ header{
     font-size:14px;
     font-weight:bold;
     z-index:9998;
-    animation:aparecerConfirmacao .25s ease;
+    animation:aparecer .25s ease;
     white-space:nowrap;
 }
 
-@keyframes aparecerConfirmacao{
-
+@keyframes aparecer{
     from{
         opacity:0;
         transform:translate(-50%,10px);
@@ -150,12 +142,9 @@ header{
         opacity:1;
         transform:translate(-50%,0);
     }
-
 }
 
-/* =========================
-   PÁGINAS
-========================= */
+/* PÁGINAS */
 
 .pagina{
     display:none;
@@ -165,9 +154,7 @@ header{
     display:block;
 }
 
-/* =========================
-   TELA INICIAL
-========================= */
+/* INÍCIO */
 
 .inicio{
     min-height:calc(100vh - 77px);
@@ -190,18 +177,14 @@ header{
     );
 }
 
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 
 .logo-principal{
     width:170px;
     height:190px;
     margin:0 auto 24px;
     position:relative;
-
-    filter:
-    drop-shadow(0 10px 18px #0006);
+    filter:drop-shadow(0 10px 18px #0006);
 }
 
 .escudo-externo{
@@ -255,18 +238,12 @@ header{
     z-index:2;
     top:65px;
     left:50%;
-
-    transform:
-    translateX(-50%)
-    skew(-8deg);
-
+    transform:translateX(-50%) skew(-8deg);
     color:white;
-
     font-size:60px;
     font-weight:1000;
     font-style:italic;
     letter-spacing:-9px;
-
     text-shadow:
     3px 3px 0 #7a1230,
     -1px -1px 0 #fff;
@@ -278,7 +255,6 @@ header{
     bottom:31px;
     left:50%;
     transform:translateX(-50%);
-
     color:white;
     font-size:14px;
     font-weight:900;
@@ -292,7 +268,6 @@ header{
     top:27px;
     left:50%;
     transform:translateX(-50%);
-
     color:white;
     font-size:9px;
     font-weight:bold;
@@ -306,9 +281,7 @@ header{
     font-weight:900;
     font-style:italic;
     letter-spacing:-4px;
-
-    text-shadow:
-    3px 4px 0 #7a1230;
+    text-shadow:3px 4px 0 #7a1230;
 }
 
 .inicio p{
@@ -317,9 +290,7 @@ header{
     margin:8px 0 28px;
 }
 
-/* =========================
-   BOTÕES
-========================= */
+/* BOTÕES */
 
 .botoes-inicio{
     display:flex;
@@ -349,9 +320,7 @@ header{
     color:white;
 }
 
-/* =========================
-   PRODUTOS
-========================= */
+/* PRODUTOS */
 
 .produtos-area{
     background:#7a1230;
@@ -363,7 +332,6 @@ header{
     max-width:1100px;
     margin:0 auto 25px;
     padding:0 18px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -393,24 +361,17 @@ header{
 
 .produtos{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(230px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:24px;
 }
 
-/* =========================
-   PRODUTO
-========================= */
+/* PRODUTO */
 
 .produto{
     background:white;
     border-radius:16px;
     overflow:hidden;
-
-    box-shadow:
-    0 5px 18px #0003;
-
+    box-shadow:0 5px 18px #0003;
     transition:
     transform .2s,
     box-shadow .2s;
@@ -418,14 +379,10 @@ header{
 
 .produto:hover{
     transform:translateY(-3px);
-
-    box-shadow:
-    0 8px 24px #0004;
+    box-shadow:0 8px 24px #0004;
 }
 
-/* =========================
-   GALERIA
-========================= */
+/* GALERIA */
 
 .galeria{
     position:relative;
@@ -449,24 +406,16 @@ header{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-
     width:38px;
     height:38px;
-
     border:0;
     border-radius:50%;
-
     background:#ffffffdd;
     color:#000;
-
     font-size:22px;
-
     cursor:pointer;
-
     z-index:2;
-
-    box-shadow:
-    0 2px 8px #0002;
+    box-shadow:0 2px 8px #0002;
 }
 
 .esquerda{
@@ -486,9 +435,7 @@ header{
     font-weight:bold;
 }
 
-/* =========================
-   INFORMAÇÕES
-========================= */
+/* INFORMAÇÕES */
 
 .info{
     padding:18px;
@@ -500,8 +447,7 @@ header{
     margin-bottom:8px;
 }
 
-
-/* SELETOR DE TAMANHO */
+/* TAMANHO */
 
 .tamanho-label{
     display:block;
@@ -514,25 +460,19 @@ header{
 .seletor-tamanho{
     width:100%;
     padding:11px;
-
     border:1px solid #ddd;
     border-radius:8px;
-
     background:white;
     color:#111;
-
     font-size:15px;
     font-weight:bold;
-
     cursor:pointer;
-
     outline:none;
 }
 
 .seletor-tamanho:focus{
     border-color:#004d98;
 }
-
 
 .preco{
     font-size:24px;
@@ -543,16 +483,12 @@ header{
 .adicionar{
     width:100%;
     padding:14px;
-
     background:#004d98;
     color:white;
-
     border:0;
     border-radius:9px;
-
     font-weight:bold;
     cursor:pointer;
-
     font-size:15px;
 }
 
@@ -560,30 +496,19 @@ header{
     background:#003b75;
 }
 
-/* =========================
-   CARRINHO
-========================= */
+/* CARRINHO */
 
 .carrinho{
     position:fixed;
-
     right:0;
     top:0;
-
     width:min(420px,100%);
     height:100%;
-
     background:white;
-
     z-index:20;
-
     padding:22px;
-
     overflow-y:auto;
-
-    box-shadow:
-    -5px 0 20px #0003;
-
+    box-shadow:-5px 0 20px #0003;
     display:none;
 }
 
@@ -593,22 +518,16 @@ header{
 
 .fechar{
     float:right;
-
     border:0;
     background:#eee;
-
     padding:8px 12px;
-
     border-radius:7px;
-
     cursor:pointer;
 }
 
 .item{
     padding:16px 0;
-
-    border-bottom:
-    1px solid #eee;
+    border-bottom:1px solid #eee;
 }
 
 .item-produto{
@@ -620,11 +539,8 @@ header{
 .item-produto img{
     width:75px;
     height:75px;
-
     object-fit:cover;
-
     border-radius:8px;
-
     background:#eee;
 }
 
@@ -640,73 +556,48 @@ header{
 
 .quantidade{
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     margin-top:10px;
 }
 
 .quantidade button{
     width:30px;
     height:30px;
-
     border:1px solid #ddd;
-
     background:white;
-
     border-radius:5px;
-
     cursor:pointer;
 }
 
 .total{
     font-size:22px;
     font-weight:bold;
-
     margin:25px 0;
 }
 
 .whatsapp{
     width:100%;
-
     padding:15px;
-
     border:0;
-
     border-radius:10px;
-
     background:#25D366;
-
     color:white;
-
     font-size:16px;
-
     font-weight:bold;
-
     cursor:pointer;
 }
 
 .continuar{
     width:100%;
-
     margin-top:10px;
-
     padding:12px;
-
     border:1px solid #ddd;
-
     border-radius:10px;
-
     background:white;
-
     color:#111;
-
     font-size:15px;
-
     font-weight:bold;
-
     cursor:pointer;
 }
 
@@ -720,23 +611,16 @@ header{
     margin-top:40px;
 }
 
-/* =========================
-   RODAPÉ
-========================= */
+/* RODAPÉ */
 
 footer{
     text-align:center;
-
     padding:35px 20px;
-
     background:#050505;
-
     color:#aaa;
 }
 
-/* =========================
-   CELULAR
-========================= */
+/* CELULAR */
 
 @media(max-width:500px){
 
@@ -792,10 +676,7 @@ footer{
     .confirmacao{
         font-size:13px;
         bottom:20px;
-
-        max-width:
-        calc(100% - 30px);
-
+        max-width:calc(100% - 30px);
         text-align:center;
     }
 
@@ -808,10 +689,6 @@ footer{
 
 <body>
 
-
-<!-- =========================
-     TOPO
-========================= -->
 
 <header>
 
@@ -859,10 +736,7 @@ id="contador">
 </header>
 
 
-
-<!-- =========================
-     INÍCIO
-========================= -->
+<!-- INÍCIO -->
 
 <section
 class="pagina ativa"
@@ -894,16 +768,13 @@ SPORTS
 
 </div>
 
-
 <h1>
 MC SPORTS
 </h1>
 
-
 <p>
 A loja do seu time
 </p>
-
 
 <div class="botoes-inicio">
 
@@ -914,7 +785,6 @@ onclick="abrirProdutos()">
 Ver camisas
 
 </button>
-
 
 <button
 class="botao-whatsapp"
@@ -933,10 +803,7 @@ WhatsApp — Dúvidas
 </section>
 
 
-
-<!-- =========================
-     PRODUTOS
-========================= -->
+<!-- PRODUTOS -->
 
 <section
 class="pagina"
@@ -944,13 +811,11 @@ id="pagina-produtos">
 
 <div class="produtos-area">
 
-
 <div class="barra-produtos">
 
 <h2 class="titulo-produtos">
 Nossas camisas
 </h2>
-
 
 <button
 class="voltar"
@@ -961,7 +826,6 @@ onclick="voltarInicio()">
 </button>
 
 </div>
-
 
 <main class="container">
 
@@ -978,10 +842,7 @@ id="produtos">
 </section>
 
 
-
-<!-- =========================
-     CARRINHO
-========================= -->
+<!-- CARRINHO -->
 
 <div
 class="carrinho"
@@ -995,15 +856,12 @@ Fechar
 
 </button>
 
-
 <h2>
 Seu carrinho
 </h2>
 
-
 <div id="itens">
 </div>
-
 
 <div class="total">
 
@@ -1015,7 +873,6 @@ Total: R$
 
 </div>
 
-
 <button
 class="whatsapp"
 onclick="finalizarPedido()">
@@ -1023,7 +880,6 @@ onclick="finalizarPedido()">
 Finalizar pedido pelo WhatsApp
 
 </button>
-
 
 <button
 class="continuar"
@@ -1036,7 +892,6 @@ Continuar comprando
 </div>
 
 
-
 <footer>
 
 MC Sports — A loja do seu time
@@ -1044,22 +899,12 @@ MC Sports — A loja do seu time
 </footer>
 
 
-
 <script>
 
-
-/* =========================
-   WHATSAPP
-========================= */
 
 const numeroWhatsApp =
 "5592994486162";
 
-
-
-/* =========================
-   PRODUTOS
-========================= */
 
 const produtos = [
 
@@ -1074,17 +919,11 @@ const produtos = [
     preco:60,
 
     fotos:[
-
         "chelsea2.jpg.heic",
-
         "chelsea.jpg.heic",
-
         "chelsea3.jpg.heic",
-
         "chelsea4.jpg.heic"
-
     ]
-
 },
 
 {
@@ -1098,13 +937,9 @@ const produtos = [
     preco:60,
 
     fotos:[
-
         "Corinthians.jpg.heic",
-
         "Corinthians2.jpg.heic"
-
     ]
-
 },
 
 {
@@ -1118,13 +953,9 @@ const produtos = [
     preco:60,
 
     fotos:[
-
         "Flamengo.jpg.heic",
-
         "Flamengo2.jpg.heic"
-
     ]
-
 },
 
 {
@@ -1138,28 +969,16 @@ const produtos = [
     preco:60,
 
     fotos:[
-
         "Milan.jpg.heic",
-
         "Milan2.jpg.heic"
-
     ]
-
 }
 
 ];
 
 
-/* =========================
-   CARRINHO
-========================= */
-
 let carrinho = [];
 
-
-/* =========================
-   DINHEIRO
-========================= */
 
 function dinheiro(valor){
 
@@ -1173,10 +992,6 @@ function dinheiro(valor){
 }
 
 
-/* =========================
-   PÁGINAS
-========================= */
-
 function abrirProdutos(){
 
     document
@@ -1184,12 +999,10 @@ function abrirProdutos(){
     .classList
     .remove("ativa");
 
-
     document
     .getElementById("pagina-produtos")
     .classList
     .add("ativa");
-
 
     window.scrollTo(0,0);
 
@@ -1203,27 +1016,20 @@ function voltarInicio(){
     .classList
     .remove("ativa");
 
-
     document
     .getElementById("pagina-inicio")
     .classList
     .add("ativa");
-
 
     window.scrollTo(0,0);
 
 }
 
 
-/* =========================
-   WHATSAPP
-========================= */
-
 function abrirWhatsApp(){
 
     const mensagem =
     "Olá! Estou no site da MC Sports e gostaria de tirar uma dúvida.";
-
 
     window.open(
 
@@ -1239,15 +1045,10 @@ function abrirWhatsApp(){
 }
 
 
-/* =========================
-   MOSTRAR PRODUTOS
-========================= */
-
 function mostrarProdutos(){
 
     const area =
     document.getElementById("produtos");
-
 
     area.innerHTML = "";
 
@@ -1264,6 +1065,7 @@ function mostrarProdutos(){
             <div class="galeria">
 
                 ${produto.fotos.map(
+
                     (foto,index)=>`
 
                     <img
@@ -1273,6 +1075,7 @@ function mostrarProdutos(){
                     >
 
                     `
+
                 ).join("")}
 
 
@@ -1290,7 +1093,6 @@ function mostrarProdutos(){
                     ‹
 
                     </button>
-
 
                     <button
                     class="seta direita"
@@ -1321,7 +1123,9 @@ function mostrarProdutos(){
             <div class="galeria">
 
                 <div class="sem-foto">
+
                     FOTO DA CAMISA
+
                 </div>
 
             </div>
@@ -1337,13 +1141,11 @@ function mostrarProdutos(){
 
             ${galeria}
 
-
             <div class="info">
 
                 <h2>
                     ${produto.nome}
                 </h2>
-
 
                 <label
                 class="tamanho-label">
@@ -1352,41 +1154,26 @@ function mostrarProdutos(){
 
                 </label>
 
-
                 <select
                 class="seletor-tamanho"
                 id="tamanho-${produto.id}">
 
-                    <option value="P">
-                        P
-                    </option>
-
-                    <option value="M"
-                    ${produto.time === "Corinthians" || produto.time === "Flamengo" || produto.time === "Milan" ? "selected" : ""}>
-
-                        M
-
-                    </option>
-
-                    <option value="G">
-                        G
-                    </option>
-
-                    <option value="GG">
-                        GG
-                    </option>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
 
                 </select>
 
-
                 <div class="preco">
-                    R$ ${dinheiro(produto.preco)}
-                </div>
 
+                    R$ ${dinheiro(produto.preco)}
+
+                </div>
 
                 <button
                 class="adicionar"
-                onclick="adicionar(${produto.id}, this)">
+                onclick="adicionar(${produto.id},this)">
 
                     Adicionar ao carrinho
 
@@ -1403,19 +1190,13 @@ function mostrarProdutos(){
 }
 
 
-/* =========================
-   MUDAR FOTO
-========================= */
-
 function mudarFoto(botao,direcao){
 
     const galeria =
     botao.parentElement;
 
-
     const fotos =
     galeria.querySelectorAll("img");
-
 
     let atual = 0;
 
@@ -1467,10 +1248,6 @@ function mudarFoto(botao,direcao){
 }
 
 
-/* =========================
-   ADICIONAR AO CARRINHO
-========================= */
-
 function adicionar(id,botao){
 
     const produto =
@@ -1482,8 +1259,6 @@ function adicionar(id,botao){
     if(!produto)return;
 
 
-    /* PEGA O TAMANHO ESCOLHIDO */
-
     const seletor =
     document.getElementById(
         "tamanho-" + id
@@ -1493,12 +1268,6 @@ function adicionar(id,botao){
     const tamanho =
     seletor.value;
 
-
-    /*
-       O MESMO PRODUTO COM
-       TAMANHOS DIFERENTES
-       FICA COMO ITEM SEPARADO
-    */
 
     const existente =
     carrinho.find(
@@ -1532,10 +1301,6 @@ function adicionar(id,botao){
     atualizarCarrinho();
 
 
-    /* =========================
-       ANIMAÇÃO
-    ========================= */
-
     const card =
     botao.closest(".produto");
 
@@ -1568,7 +1333,6 @@ function adicionar(id,botao){
 
         clone.classList.remove("ativa");
 
-
         clone.classList.add(
             "animacao-carrinho"
         );
@@ -1590,7 +1354,6 @@ function adicionar(id,botao){
         requestAnimationFrame(()=>{
 
             clone.style.left =
-
             (
                 carrinhoRect.left +
                 carrinhoRect.width / 2 -
@@ -1599,7 +1362,6 @@ function adicionar(id,botao){
 
 
             clone.style.top =
-
             (
                 carrinhoRect.top +
                 carrinhoRect.height / 2 -
@@ -1630,10 +1392,6 @@ function adicionar(id,botao){
     }
 
 
-    /* =========================
-       CONFIRMAÇÃO
-    ========================= */
-
     const confirmacao =
     document.createElement("div");
 
@@ -1663,15 +1421,10 @@ function adicionar(id,botao){
 }
 
 
-/* =========================
-   ATUALIZAR CARRINHO
-========================= */
-
 function atualizarCarrinho(){
 
     const area =
     document.getElementById("itens");
-
 
     area.innerHTML = "";
 
@@ -1704,7 +1457,6 @@ function atualizarCarrinho(){
 
         total += subtotal;
 
-
         quantidadeTotal +=
         item.quantidade;
 
@@ -1720,13 +1472,11 @@ function atualizarCarrinho(){
                 alt="${produto.nome}"
                 >
 
-
                 <div class="item-info">
 
                     <strong>
                         ${produto.nome}
                     </strong>
-
 
                     <div class="item-tamanho">
 
@@ -1737,37 +1487,28 @@ function atualizarCarrinho(){
 
                     </div>
 
-
                     <div class="quantidade">
 
                         <button
-                        onclick=
-                        "alterarQuantidade(${item.id},'${item.tamanho}',-1)">
+                        onclick="alterarQuantidade(${item.id},'${item.tamanho}',-1)">
 
                             -
 
                         </button>
 
-
                         <span>
                             ${item.quantidade}
                         </span>
 
-
                         <button
-                        onclick=
-                        "alterarQuantidade(${item.id},'${item.tamanho}',1)">
+                        onclick="alterarQuantidade(${item.id},'${item.tamanho}',1)">
 
                             +
 
                         </button>
 
-
                         <span>
-
-                            R$
-                            ${dinheiro(subtotal)}
-
+                            R$ ${dinheiro(subtotal)}
                         </span>
 
                     </div>
@@ -1796,10 +1537,6 @@ function atualizarCarrinho(){
 
 }
 
-
-/* =========================
-   ALTERAR QUANTIDADE
-========================= */
 
 function alterarQuantidade(
     id,
@@ -1840,10 +1577,6 @@ function alterarQuantidade(
 }
 
 
-/* =========================
-   ABRIR CARRINHO
-========================= */
-
 function abrirCarrinho(){
 
     document
@@ -1853,10 +1586,6 @@ function abrirCarrinho(){
 
 }
 
-
-/* =========================
-   FECHAR CARRINHO
-========================= */
 
 function fecharCarrinho(){
 
@@ -1868,9 +1597,7 @@ function fecharCarrinho(){
 }
 
 
-/* =========================
-   FINALIZAR PEDIDO
-========================= */
+/* WHATSAPP */
 
 function finalizarPedido(){
 
@@ -1886,7 +1613,26 @@ function finalizarPedido(){
 
 
     let mensagem =
-    "Olá! Quero fazer um pedido na MC Sports:%0A%0A";
+
+    "🏪 *MC SPORTS — NOVO PEDIDO*%0A%0A";
+
+
+    mensagem +=
+
+    "📋 *DADOS DE ENTREGA*%0A" +
+
+    "👤 Nome:%0A" +
+
+    "📍 Bairro:%0A" +
+
+    "🏠 Rua:%0A" +
+
+    "🔢 Número da casa:%0A%0A";
+
+
+    mensagem +=
+
+    "🛍️ *PEDIDO*%0A";
 
 
     let total = 0;
@@ -1910,19 +1656,18 @@ function finalizarPedido(){
 
         mensagem +=
 
-        `${item.quantidade}x ${produto.nome} - Tamanho ${item.tamanho} - R$ ${dinheiro(subtotal)}%0A`;
+        `👕 ${item.quantidade}x ${produto.nome}%0A` +
+
+        `📏 Tamanho: ${item.tamanho}%0A` +
+
+        `💰 Subtotal: R$ ${dinheiro(subtotal)}%0A%0A`;
 
     });
 
 
     mensagem +=
 
-    `%0ATotal: R$ ${dinheiro(total)}%0A%0A`;
-
-
-    mensagem +=
-
-    "Gostaria de confirmar a disponibilidade e combinar a entrega.";
+    `💵 *TOTAL: R$ ${dinheiro(total)}*`;
 
 
     window.open(
@@ -1938,10 +1683,6 @@ function finalizarPedido(){
 
 }
 
-
-/* =========================
-   INICIAR
-========================= */
 
 mostrarProdutos();
 
