@@ -10,6 +10,10 @@
 
 <style>
 
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -43,6 +47,7 @@ header{
 .topo{
     max-width:1100px;
     margin:auto;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -63,7 +68,7 @@ header{
 
 
 /* =========================
-   CARRINHO
+   CARRINHO DO TOPO
 ========================= */
 
 .carrinho-btn{
@@ -85,7 +90,7 @@ header{
 }
 
 
-/* ÍCONE DO CARRINHO */
+/* ÍCONE */
 
 .icone-carrinho{
     width:31px;
@@ -130,6 +135,94 @@ header{
 
 
 /* =========================
+   ANIMAÇÃO DO CARRINHO
+========================= */
+
+.animacao-carrinho{
+
+    position:fixed;
+
+    z-index:9999;
+
+    width:70px;
+    height:70px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    pointer-events:none;
+
+    box-shadow:0 5px 15px #0004;
+
+    transition:
+
+        left .65s cubic-bezier(.2,.8,.3,1),
+
+        top .65s cubic-bezier(.2,.8,.3,1),
+
+        width .65s ease,
+
+        height .65s ease,
+
+        opacity .65s ease;
+}
+
+
+/* CONFIRMAÇÃO */
+
+.confirmacao{
+
+    position:fixed;
+
+    left:50%;
+    bottom:25px;
+
+    transform:translateX(-50%);
+
+    background:#111;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:9px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    z-index:9998;
+
+    animation:aparecerConfirmacao .25s ease;
+
+    white-space:nowrap;
+}
+
+@keyframes aparecerConfirmacao{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translate(-50%,0);
+
+    }
+
+}
+
+
+/* =========================
    PÁGINAS
 ========================= */
 
@@ -143,7 +236,7 @@ header{
 
 
 /* =========================
-   HOME
+   TELA INICIAL
 ========================= */
 
 .inicio{
@@ -151,7 +244,9 @@ header{
     min-height:calc(100vh - 77px);
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
@@ -159,18 +254,25 @@ header{
     padding:40px 20px;
 
     background:
+
     linear-gradient(
+
         135deg,
+
         #004d98 0%,
+
         #004d98 43%,
+
         #7a1230 43%,
+
         #7a1230 100%
+
     );
 }
 
 
 /* =========================
-   LOGO
+   LOGO PRINCIPAL
 ========================= */
 
 .logo-principal{
@@ -182,17 +284,23 @@ header{
 
     position:relative;
 
-    filter:drop-shadow(0 10px 18px #0006);
+    filter:
+    drop-shadow(
+        0 10px 18px #0006
+    );
 }
+
 
 .escudo-externo{
 
     position:absolute;
+
     inset:0;
 
     background:#7a1230;
 
     clip-path:polygon(
+
         7% 4%,
         93% 4%,
         93% 60%,
@@ -202,17 +310,21 @@ header{
         22% 85%,
         12% 73%,
         7% 60%
+
     );
 }
+
 
 .escudo-interno{
 
     position:absolute;
+
     inset:7px;
 
     background:#004d98;
 
     clip-path:polygon(
+
         7% 4%,
         93% 4%,
         93% 60%,
@@ -222,8 +334,10 @@ header{
         22% 85%,
         12% 73%,
         7% 60%
+
     );
 }
+
 
 .logo-linha{
 
@@ -237,18 +351,23 @@ header{
     top:50%;
     left:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+    translate(-50%,-50%);
 }
+
 
 .logo-mc{
 
     position:absolute;
+
     z-index:2;
 
     top:65px;
     left:50%;
 
-    transform:translateX(-50%) skew(-8deg);
+    transform:
+    translateX(-50%)
+    skew(-8deg);
 
     color:white;
 
@@ -261,19 +380,25 @@ header{
     letter-spacing:-9px;
 
     text-shadow:
+
     3px 3px 0 #7a1230,
+
     -1px -1px 0 #fff;
 }
+
 
 .logo-sports{
 
     position:absolute;
+
     z-index:3;
 
     bottom:31px;
+
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+    translateX(-50%);
 
     color:white;
 
@@ -286,15 +411,19 @@ header{
     white-space:nowrap;
 }
 
+
 .logo-ano{
 
     position:absolute;
+
     z-index:3;
 
     top:27px;
+
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+    translateX(-50%);
 
     color:white;
 
@@ -309,7 +438,7 @@ header{
 
 
 /* =========================
-   TEXTO HOME
+   TEXTO
 ========================= */
 
 .inicio h1{
@@ -325,8 +454,10 @@ header{
     letter-spacing:-4px;
 
     text-shadow:
+
     3px 4px 0 #7a1230;
 }
+
 
 .inicio p{
 
@@ -355,6 +486,7 @@ header{
     margin:auto;
 }
 
+
 .botao-camisas,
 .botao-whatsapp{
 
@@ -371,12 +503,14 @@ header{
     cursor:pointer;
 }
 
+
 .botao-camisas{
 
     background:white;
 
     color:#004d98;
 }
+
 
 .botao-whatsapp{
 
@@ -394,16 +528,19 @@ header{
 
     background:#7a1230;
 
-    min-height:calc(100vh - 77px);
+    min-height:
+    calc(100vh - 77px);
 
     padding:30px 0 55px;
 }
+
 
 .barra-produtos{
 
     max-width:1100px;
 
-    margin:0 auto 25px;
+    margin:
+    0 auto 25px;
 
     padding:0 18px;
 
@@ -414,6 +551,7 @@ header{
     align-items:center;
 }
 
+
 .titulo-produtos{
 
     color:white;
@@ -422,6 +560,7 @@ header{
 
     font-weight:900;
 }
+
 
 .voltar{
 
@@ -440,6 +579,7 @@ header{
     cursor:pointer;
 }
 
+
 .container{
 
     max-width:1100px;
@@ -449,12 +589,16 @@ header{
     padding:0 18px;
 }
 
+
 .produtos{
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(230px,1fr));
+    repeat(
+        auto-fit,
+        minmax(230px,1fr)
+    );
 
     gap:24px;
 }
@@ -472,18 +616,22 @@ header{
 
     overflow:hidden;
 
-    box-shadow:0 5px 18px #0003;
+    box-shadow:
+    0 5px 18px #0003;
 
     transition:
     transform .2s,
     box-shadow .2s;
 }
 
+
 .produto:hover{
 
-    transform:translateY(-3px);
+    transform:
+    translateY(-3px);
 
-    box-shadow:0 8px 24px #0004;
+    box-shadow:
+    0 8px 24px #0004;
 }
 
 
@@ -502,6 +650,7 @@ header{
     overflow:hidden;
 }
 
+
 .galeria img{
 
     width:100%;
@@ -513,10 +662,14 @@ header{
     display:none;
 }
 
+
 .galeria img.ativa{
 
     display:block;
 }
+
+
+/* SETAS */
 
 .seta{
 
@@ -524,7 +677,8 @@ header{
 
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+    translateY(-50%);
 
     width:38px;
 
@@ -543,15 +697,21 @@ header{
     cursor:pointer;
 
     z-index:2;
+
+    box-shadow:
+    0 2px 8px #0002;
 }
+
 
 .esquerda{
     left:10px;
 }
 
+
 .direita{
     right:10px;
 }
+
 
 .sem-foto{
 
@@ -578,6 +738,7 @@ header{
     padding:18px;
 }
 
+
 .info h2{
 
     font-size:19px;
@@ -586,6 +747,7 @@ header{
 
     margin-bottom:8px;
 }
+
 
 .tamanho{
 
@@ -596,6 +758,7 @@ header{
     margin:6px 0;
 }
 
+
 .preco{
 
     font-size:24px;
@@ -604,6 +767,7 @@ header{
 
     margin:14px 0;
 }
+
 
 .adicionar{
 
@@ -625,6 +789,7 @@ header{
 
     font-size:15px;
 }
+
 
 .adicionar:hover{
 
@@ -655,15 +820,18 @@ header{
 
     overflow-y:auto;
 
-    box-shadow:-5px 0 20px #0003;
+    box-shadow:
+    -5px 0 20px #0003;
 
     display:none;
 }
+
 
 .carrinho.aberto{
 
     display:block;
 }
+
 
 .fechar{
 
@@ -680,12 +848,15 @@ header{
     cursor:pointer;
 }
 
+
 .item{
 
     padding:16px 0;
 
-    border-bottom:1px solid #eee;
+    border-bottom:
+    1px solid #eee;
 }
+
 
 .item-produto{
 
@@ -695,6 +866,7 @@ header{
 
     align-items:center;
 }
+
 
 .item-produto img{
 
@@ -709,10 +881,12 @@ header{
     background:#eee;
 }
 
+
 .item-info{
 
     flex:1;
 }
+
 
 .quantidade{
 
@@ -725,13 +899,15 @@ header{
     margin-top:10px;
 }
 
+
 .quantidade button{
 
     width:30px;
 
     height:30px;
 
-    border:1px solid #ddd;
+    border:
+    1px solid #ddd;
 
     background:white;
 
@@ -739,6 +915,7 @@ header{
 
     cursor:pointer;
 }
+
 
 .total{
 
@@ -751,7 +928,7 @@ header{
 
 
 /* =========================
-   BOTÃO WHATSAPP
+   WHATSAPP
 ========================= */
 
 .whatsapp{
@@ -775,6 +952,7 @@ header{
     cursor:pointer;
 }
 
+
 .continuar{
 
     width:100%;
@@ -783,7 +961,8 @@ header{
 
     padding:12px;
 
-    border:1px solid #ddd;
+    border:
+    1px solid #ddd;
 
     border-radius:10px;
 
@@ -797,6 +976,7 @@ header{
 
     cursor:pointer;
 }
+
 
 .vazio{
 
@@ -835,12 +1015,14 @@ footer{
         font-size:43px;
     }
 
+
     .logo-principal{
 
         width:145px;
 
         height:165px;
     }
+
 
     .logo-mc{
 
@@ -849,6 +1031,7 @@ footer{
         top:57px;
     }
 
+
     .logo-sports{
 
         bottom:27px;
@@ -856,43 +1039,64 @@ footer{
         font-size:12px;
     }
 
+
     .titulo-produtos{
 
         font-size:25px;
     }
 
+
     .produtos{
 
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+        1fr 1fr;
 
         gap:12px;
     }
+
 
     .galeria{
 
         height:260px;
     }
 
+
     .info{
 
         padding:13px;
     }
+
 
     .info h2{
 
         font-size:16px;
     }
 
+
     .preco{
 
         font-size:20px;
     }
+
 
     .adicionar{
 
         padding:11px;
 
         font-size:13px;
+    }
+
+
+    .confirmacao{
+
+        font-size:13px;
+
+        bottom:20px;
+
+        max-width:
+        calc(100% - 30px);
+
+        text-align:center;
     }
 
 }
@@ -932,8 +1136,6 @@ onclick="abrirCarrinho()"
 aria-label="Abrir carrinho">
 
 
-<!-- ÍCONE DE CARRINHO -->
-
 <svg
 class="icone-carrinho"
 viewBox="0 0 24 24"
@@ -943,8 +1145,6 @@ xmlns="http://www.w3.org/2000/svg">
 
 </svg>
 
-
-<!-- CONTADOR -->
 
 <span
 class="contador"
@@ -964,7 +1164,7 @@ id="contador">
 
 
 <!-- =========================
-     PÁGINA INICIAL
+     INÍCIO
 ========================= -->
 
 <section
@@ -1053,6 +1253,7 @@ id="pagina-produtos">
 
 <div class="barra-produtos">
 
+
 <h2 class="titulo-produtos">
 Nossas camisas
 </h2>
@@ -1065,6 +1266,7 @@ onclick="voltarInicio()">
 ← Voltar
 
 </button>
+
 
 </div>
 
@@ -1110,6 +1312,7 @@ Seu carrinho
 
 
 <div id="itens">
+
 </div>
 
 
@@ -1161,7 +1364,8 @@ MC Sports — A loja do seu time
    WHATSAPP
 ========================= */
 
-const numeroWhatsApp = "5592994486162";
+const numeroWhatsApp =
+"5592994486162";
 
 
 
@@ -1179,18 +1383,25 @@ const produtos = [
 
     time:"Chelsea",
 
-    nome:"Camisa Chelsea 26/27 — Principal",
+    nome:
+    "Camisa Chelsea 26/27 — Principal",
 
     tamanho:"G",
 
     preco:60,
 
     fotos:[
+
         "chelsea2.jpg.heic",
+
         "chelsea.jpg.heic",
+
         "chelsea3.jpg.heic",
+
         "chelsea4.jpg.heic"
+
     ]
+
 },
 
 
@@ -1201,16 +1412,21 @@ const produtos = [
 
     time:"Corinthians",
 
-    nome:"Camisa Corinthians 2026 — Torcedor",
+    nome:
+    "Camisa Corinthians 2026 — Torcedor",
 
     tamanho:"M",
 
     preco:60,
 
     fotos:[
+
         "Corinthians.jpg.heic",
+
         "Corinthians2.jpg.heic"
+
     ]
+
 },
 
 
@@ -1221,16 +1437,21 @@ const produtos = [
 
     time:"Flamengo",
 
-    nome:"Camisa Flamengo 2026 — Principal",
+    nome:
+    "Camisa Flamengo 2026 — Principal",
 
     tamanho:"M",
 
     preco:60,
 
     fotos:[
+
         "Flamengo.jpg.heic",
+
         "Flamengo2.jpg.heic"
+
     ]
+
 },
 
 
@@ -1241,16 +1462,21 @@ const produtos = [
 
     time:"Milan",
 
-    nome:"Camisa Milan 26/27 — Principal",
+    nome:
+    "Camisa Milan 26/27 — Principal",
 
     tamanho:"M",
 
     preco:60,
 
     fotos:[
+
         "Milan.jpg.heic",
+
         "Milan2.jpg.heic"
+
     ]
+
 }
 
 ];
@@ -1261,7 +1487,7 @@ const produtos = [
    CARRINHO
 ========================= */
 
-let carrinho=[];
+let carrinho = [];
 
 
 
@@ -1286,7 +1512,7 @@ function dinheiro(valor){
 
 
 /* =========================
-   ABRIR PRODUTOS
+   PÁGINA DE PRODUTOS
 ========================= */
 
 function abrirProdutos(){
@@ -1307,11 +1533,6 @@ function abrirProdutos(){
 
 }
 
-
-
-/* =========================
-   VOLTAR PARA INÍCIO
-========================= */
 
 function voltarInicio(){
 
@@ -1346,8 +1567,11 @@ function abrirWhatsApp(){
     window.open(
 
         "https://wa.me/" +
+
         numeroWhatsApp +
+
         "?text=" +
+
         encodeURIComponent(mensagem),
 
         "_blank"
@@ -1368,17 +1592,17 @@ function mostrarProdutos(){
     document.getElementById("produtos");
 
 
-    area.innerHTML="";
+    area.innerHTML = "";
 
 
     produtos.forEach(produto=>{
 
-        let galeria="";
+        let galeria = "";
 
 
-        if(produto.fotos.length>0){
+        if(produto.fotos.length > 0){
 
-            galeria=`
+            galeria = `
 
             <div class="galeria">
 
@@ -1402,7 +1626,7 @@ function mostrarProdutos(){
 
 
                 ${
-                    produto.fotos.length>1
+                    produto.fotos.length > 1
 
                     ?
 
@@ -1445,7 +1669,7 @@ function mostrarProdutos(){
 
         else{
 
-            galeria=`
+            galeria = `
 
             <div class="galeria">
 
@@ -1472,7 +1696,9 @@ function mostrarProdutos(){
             <div class="info">
 
                 <h2>
+
                     ${produto.nome}
+
                 </h2>
 
 
@@ -1481,7 +1707,9 @@ function mostrarProdutos(){
                     Tamanho disponível:
 
                     <strong>
+
                         ${produto.tamanho}
+
                     </strong>
 
                 </div>
@@ -1498,7 +1726,7 @@ function mostrarProdutos(){
 
                 class="adicionar"
 
-                onclick="adicionar(${produto.id})">
+                onclick="adicionar(${produto.id}, this)">
 
                     Adicionar ao carrinho
 
@@ -1517,7 +1745,7 @@ function mostrarProdutos(){
 
 
 /* =========================
-   TROCAR FOTO
+   MUDAR FOTO
 ========================= */
 
 function mudarFoto(botao,direcao){
@@ -1530,7 +1758,7 @@ function mudarFoto(botao,direcao){
     galeria.querySelectorAll("img");
 
 
-    let atual=0;
+    let atual = 0;
 
 
     fotos.forEach(
@@ -1538,10 +1766,13 @@ function mudarFoto(botao,direcao){
         (foto,index)=>{
 
             if(
-                foto.classList.contains("ativa")
+
+                foto.classList
+                .contains("ativa")
+
             ){
 
-                atual=index;
+                atual = index;
 
             }
 
@@ -1559,17 +1790,17 @@ function mudarFoto(botao,direcao){
     atual + direcao;
 
 
-    if(nova<0){
+    if(nova < 0){
 
         nova =
-        fotos.length-1;
+        fotos.length - 1;
 
     }
 
 
-    if(nova>=fotos.length){
+    if(nova >= fotos.length){
 
-        nova=0;
+        nova = 0;
 
     }
 
@@ -1583,10 +1814,21 @@ function mudarFoto(botao,direcao){
 
 
 /* =========================
-   ADICIONAR
+   ADICIONAR AO CARRINHO
 ========================= */
 
-function adicionar(id){
+function adicionar(id,botao){
+
+    const produto =
+    produtos.find(
+        p=>p.id===id
+    );
+
+
+    if(!produto)return;
+
+
+    /* ADICIONA */
 
     const existente =
     carrinho.find(
@@ -1616,7 +1858,138 @@ function adicionar(id){
     atualizarCarrinho();
 
 
-    abrirCarrinho();
+    /* =========================
+       ANIMAÇÃO
+    ========================= */
+
+    const card =
+    botao.closest(".produto");
+
+
+    const imagem =
+    card.querySelector(
+        ".galeria img.ativa"
+    );
+
+
+    const carrinhoBtn =
+    document.querySelector(
+        ".carrinho-btn"
+    );
+
+
+    if(imagem && carrinhoBtn){
+
+        const clone =
+        imagem.cloneNode(true);
+
+
+        const imagemRect =
+        imagem.getBoundingClientRect();
+
+
+        const carrinhoRect =
+        carrinhoBtn.getBoundingClientRect();
+
+
+        clone.classList.remove("ativa");
+
+
+        clone.classList.add(
+            "animacao-carrinho"
+        );
+
+
+        clone.style.left =
+        imagemRect.left + "px";
+
+
+        clone.style.top =
+        imagemRect.top + "px";
+
+
+        document.body.appendChild(
+            clone
+        );
+
+
+        requestAnimationFrame(()=>{
+
+            clone.style.left =
+
+            (
+
+                carrinhoRect.left +
+
+                carrinhoRect.width / 2 -
+
+                35
+
+            ) + "px";
+
+
+            clone.style.top =
+
+            (
+
+                carrinhoRect.top +
+
+                carrinhoRect.height / 2 -
+
+                35
+
+            ) + "px";
+
+
+            clone.style.width =
+            "25px";
+
+
+            clone.style.height =
+            "25px";
+
+
+            clone.style.opacity =
+            "0";
+
+        });
+
+
+        setTimeout(()=>{
+
+            clone.remove();
+
+        },700);
+
+    }
+
+
+    /* =========================
+       AVISO
+    ========================= */
+
+    const confirmacao =
+    document.createElement("div");
+
+
+    confirmacao.className =
+    "confirmacao";
+
+
+    confirmacao.innerText =
+    "Produto adicionado ao carrinho";
+
+
+    document.body.appendChild(
+        confirmacao
+    );
+
+
+    setTimeout(()=>{
+
+        confirmacao.remove();
+
+    },1400);
 
 }
 
@@ -1632,15 +2005,15 @@ function atualizarCarrinho(){
     document.getElementById("itens");
 
 
-    area.innerHTML="";
+    area.innerHTML = "";
 
 
-    let total=0;
+    let total = 0;
 
-    let quantidadeTotal=0;
+    let quantidadeTotal = 0;
 
 
-    if(carrinho.length===0){
+    if(carrinho.length === 0){
 
         area.innerHTML =
         '<div class="vazio">Seu carrinho está vazio.</div>';
@@ -1686,20 +2059,28 @@ function atualizarCarrinho(){
                 <div class="item-info">
 
                     <strong>
+
                         ${produto.nome}
+
                     </strong>
 
                     <br>
 
                     <small>
-                        Tamanho ${produto.tamanho}
+
+                        Tamanho
+                        ${produto.tamanho}
+
                     </small>
 
 
                     <div class="quantidade">
 
+
                         <button
-                        onclick="alterarQuantidade(${item.id},-1)">
+
+                        onclick=
+                        "alterarQuantidade(${item.id},-1)">
 
                             -
 
@@ -1707,12 +2088,16 @@ function atualizarCarrinho(){
 
 
                         <span>
+
                             ${item.quantidade}
+
                         </span>
 
 
                         <button
-                        onclick="alterarQuantidade(${item.id},1)">
+
+                        onclick=
+                        "alterarQuantidade(${item.id},1)">
 
                             +
 
@@ -1721,9 +2106,11 @@ function atualizarCarrinho(){
 
                         <span>
 
-                            R$ ${dinheiro(subtotal)}
+                            R$
+                            ${dinheiro(subtotal)}
 
                         </span>
+
 
                     </div>
 
@@ -1771,7 +2158,7 @@ function alterarQuantidade(id,valor){
     item.quantidade += valor;
 
 
-    if(item.quantidade<=0){
+    if(item.quantidade <= 0){
 
         carrinho =
         carrinho.filter(
@@ -1823,7 +2210,7 @@ function fecharCarrinho(){
 
 function finalizarPedido(){
 
-    if(carrinho.length===0){
+    if(carrinho.length === 0){
 
         alert(
             "Seu carrinho está vazio."
@@ -1838,7 +2225,7 @@ function finalizarPedido(){
     "Olá! Quero fazer um pedido na MC Sports:%0A%0A";
 
 
-    let total=0;
+    let total = 0;
 
 
     carrinho.forEach(item=>{
@@ -1877,8 +2264,11 @@ function finalizarPedido(){
     window.open(
 
         "https://wa.me/" +
+
         numeroWhatsApp +
+
         "?text=" +
+
         mensagem,
 
         "_blank"
