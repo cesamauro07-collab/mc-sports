@@ -60,7 +60,7 @@ header{
 }
 
 /* =========================
-   CARRINHO DO TOPO
+   CARRINHO
 ========================= */
 
 .carrinho-btn{
@@ -249,7 +249,7 @@ header{
 }
 
 /* =========================
-   BOTÕES INICIAIS
+   BOTÕES
 ========================= */
 
 .botoes-inicio{
@@ -345,11 +345,15 @@ header{
     overflow:hidden;
 }
 
+/* IMPORTANTE:
+   cursor indica que a foto pode ser ampliada */
+
 .galeria img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:none;
+    cursor:zoom-in;
 }
 
 .galeria img.ativa{
@@ -428,6 +432,110 @@ header{
     font-weight:bold;
     cursor:pointer;
     font-size:15px;
+}
+
+/* =========================
+   VISUALIZADOR DE FOTO
+========================= */
+
+.visualizador{
+    position:fixed;
+    inset:0;
+    background:#000e;
+    z-index:1000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.visualizador.aberto{
+    display:flex;
+}
+
+.visualizador-conteudo{
+    position:relative;
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.visualizador img{
+    max-width:90%;
+    max-height:90%;
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+
+    border-radius:8px;
+
+    box-shadow:
+    0 10px 40px #0008;
+}
+
+/* BOTÃO FECHAR */
+
+.fechar-foto{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    width:45px;
+    height:45px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#ffffffdd;
+    color:#111;
+
+    font-size:28px;
+    line-height:1;
+
+    cursor:pointer;
+
+    z-index:3;
+}
+
+/* SETAS DA FOTO GRANDE */
+
+.seta-foto{
+    position:absolute;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    width:50px;
+    height:50px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#ffffffdd;
+
+    color:#111;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    z-index:3;
+}
+
+.seta-foto.esquerda-foto{
+    left:15px;
+}
+
+.seta-foto.direita-foto{
+    right:15px;
 }
 
 /* =========================
@@ -622,6 +730,31 @@ footer{
         font-size:13px;
     }
 
+    /* FOTO GRANDE NO CELULAR */
+
+    .visualizador{
+        padding:10px;
+    }
+
+    .visualizador img{
+        max-width:96%;
+        max-height:85%;
+    }
+
+    .seta-foto{
+        width:42px;
+        height:42px;
+        font-size:27px;
+    }
+
+    .seta-foto.esquerda-foto{
+        left:8px;
+    }
+
+    .seta-foto.direita-foto{
+        right:8px;
+    }
+
 }
 
 </style>
@@ -639,28 +772,38 @@ footer{
 <div class="topo">
 
 <div>
-<div class="logo-topo">MC SPORTS</div>
-<div class="slogan">A loja do seu time</div>
+
+<div class="logo-topo">
+MC SPORTS
+</div>
+
+<div class="slogan">
+A loja do seu time
+</div>
+
 </div>
 
 <button
 id="botaoCarrinho"
 class="carrinho-btn"
-type="button"
-aria-label="Abrir carrinho">
+type="button">
 
 <svg
 class="icone-carrinho"
 viewBox="0 0 24 24"
 xmlns="http://www.w3.org/2000/svg">
 
-<path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45C5.09 14.32 5 14.65 5 15c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L20.88 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.89-2-1.99-2z"/>
+<path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45C5.09 14.32 5 14.65 5 15c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L20.88 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-1.99-2z"/>
 
 </svg>
 
 <span
 class="contador"
-id="contador">0</span>
+id="contador">
+
+0
+
+</span>
 
 </button>
 
@@ -702,9 +845,13 @@ SPORTS
 
 </div>
 
-<h1>MC SPORTS</h1>
+<h1>
+MC SPORTS
+</h1>
 
-<p>A loja do seu time</p>
+<p>
+A loja do seu time
+</p>
 
 <div class="botoes-inicio">
 
@@ -778,6 +925,53 @@ id="produtos">
 
 
 <!-- =========================
+     VISUALIZADOR
+========================= -->
+
+<div
+id="visualizador"
+class="visualizador">
+
+<div class="visualizador-conteudo">
+
+<button
+id="fecharFoto"
+class="fechar-foto"
+type="button">
+
+×
+
+</button>
+
+<button
+id="fotoAnterior"
+class="seta-foto esquerda-foto"
+type="button">
+
+‹
+
+</button>
+
+<img
+id="fotoAmpliada"
+src=""
+alt="Foto ampliada">
+
+<button
+id="proximaFoto"
+class="seta-foto direita-foto"
+type="button">
+
+›
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
      CARRINHO
 ========================= -->
 
@@ -844,7 +1038,8 @@ MC Sports — A loja do seu time
    CONFIGURAÇÃO
 ========================= */
 
-const numeroWhatsApp = "5592994486162";
+const numeroWhatsApp =
+"5592994486162";
 
 
 /* =========================
@@ -855,51 +1050,81 @@ const produtos = [
 
 {
     id:1,
+
     time:"Chelsea",
-    nome:"Camisa Chelsea 26/27 — Principal",
+
+    nome:
+    "Camisa Chelsea 26/27 — Principal",
+
     preco:60,
 
     fotos:[
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7160.jpeg",
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7161.jpeg",
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7162.jpeg",
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7163.jpeg"
+
     ]
 },
 
 {
     id:2,
+
     time:"Corinthians",
-    nome:"Camisa Corinthians 2026 — Torcedor",
+
+    nome:
+    "Camisa Corinthians 2026 — Torcedor",
+
     preco:60,
 
     fotos:[
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7156.jpeg",
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7159.jpeg"
+
     ]
 },
 
 {
     id:3,
+
     time:"Flamengo",
-    nome:"Camisa Flamengo 2026 — Principal",
+
+    nome:
+    "Camisa Flamengo 2026 — Principal",
+
     preco:60,
 
     fotos:[
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7164.jpeg",
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7167.jpeg"
+
     ]
 },
 
 {
     id:4,
+
     time:"Milan",
-    nome:"Camisa Milan 26/27 — Principal",
+
+    nome:
+    "Camisa Milan 26/27 — Principal",
+
     preco:60,
 
     fotos:[
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7168.jpeg",
+
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7171.jpeg"
+
     ]
 }
 
@@ -914,7 +1139,16 @@ let carrinho = [];
 
 
 /* =========================
-   FORMATAÇÃO
+   CONTROLE DA FOTO AMPLIADA
+========================= */
+
+let fotosVisualizador = [];
+
+let indiceFotoVisualizador = 0;
+
+
+/* =========================
+   DINHEIRO
 ========================= */
 
 function dinheiro(valor){
@@ -989,7 +1223,8 @@ function abrirWhatsApp(){
     "?text=" +
     encodeURIComponent(mensagem);
 
-    window.location.href = url;
+    window.location.href =
+    url;
 
 }
 
@@ -1006,7 +1241,8 @@ function mostrarProdutos(){
     area.innerHTML = "";
 
 
-    produtos.forEach(function(produto){
+    produtos.forEach(
+    function(produto){
 
         const card =
         document.createElement("div");
@@ -1044,6 +1280,24 @@ function mostrarProdutos(){
 
             }
 
+
+            /* AO CLICAR NA FOTO,
+               ABRE A FOTO GRANDE */
+
+            imagem.addEventListener(
+                "click",
+                function(){
+
+                    abrirVisualizador(
+                        produto.fotos,
+                        index,
+                        produto.nome
+                    );
+
+                }
+            );
+
+
             galeria.appendChild(
                 imagem
             );
@@ -1051,7 +1305,7 @@ function mostrarProdutos(){
         });
 
 
-        /* SETAS */
+        /* SETAS DA GALERIA */
 
         if(produto.fotos.length > 1){
 
@@ -1067,9 +1321,12 @@ function mostrarProdutos(){
             esquerda.innerHTML =
             "‹";
 
+
             esquerda.addEventListener(
                 "click",
-                function(){
+                function(event){
+
+                    event.stopPropagation();
 
                     mudarFoto(
                         galeria,
@@ -1092,9 +1349,12 @@ function mostrarProdutos(){
             direita.innerHTML =
             "›";
 
+
             direita.addEventListener(
                 "click",
-                function(){
+                function(event){
+
+                    event.stopPropagation();
 
                     mudarFoto(
                         galeria,
@@ -1204,6 +1464,7 @@ function mostrarProdutos(){
         card.appendChild(galeria);
         card.appendChild(info);
 
+
         area.appendChild(card);
 
     });
@@ -1212,7 +1473,7 @@ function mostrarProdutos(){
 
 
 /* =========================
-   TROCAR FOTO
+   TROCAR FOTO NA GALERIA
 ========================= */
 
 function mudarFoto(
@@ -1222,6 +1483,7 @@ function mudarFoto(
 
     const fotos =
     galeria.querySelectorAll("img");
+
 
     if(fotos.length <= 1){
         return;
@@ -1277,7 +1539,155 @@ function mudarFoto(
 
 
 /* =========================
-   ADICIONAR AO CARRINHO
+   ABRIR FOTO AMPLIADA
+========================= */
+
+function abrirVisualizador(
+    fotos,
+    indice,
+    nome
+){
+
+    fotosVisualizador =
+    fotos.slice();
+
+    indiceFotoVisualizador =
+    indice;
+
+
+    atualizarFotoAmpliada(
+        nome
+    );
+
+
+    document
+    .getElementById("visualizador")
+    .classList
+    .add("aberto");
+
+
+    document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================
+   ATUALIZAR FOTO AMPLIADA
+========================= */
+
+function atualizarFotoAmpliada(
+    nome
+){
+
+    const imagem =
+    document.getElementById(
+        "fotoAmpliada"
+    );
+
+
+    imagem.src =
+    fotosVisualizador[
+        indiceFotoVisualizador
+    ];
+
+
+    imagem.alt =
+    nome;
+
+}
+
+
+/* =========================
+   FOTO ANTERIOR
+========================= */
+
+function fotoAnterior(){
+
+    if(
+        fotosVisualizador.length === 0
+    ){
+        return;
+    }
+
+
+    indiceFotoVisualizador--;
+
+
+    if(
+        indiceFotoVisualizador < 0
+    ){
+
+        indiceFotoVisualizador =
+        fotosVisualizador.length - 1;
+
+    }
+
+
+    atualizarFotoAmpliada(
+        document.getElementById(
+            "fotoAmpliada"
+        ).alt
+    );
+
+}
+
+
+/* =========================
+   PRÓXIMA FOTO
+========================= */
+
+function proximaFoto(){
+
+    if(
+        fotosVisualizador.length === 0
+    ){
+        return;
+    }
+
+
+    indiceFotoVisualizador++;
+
+
+    if(
+        indiceFotoVisualizador >=
+        fotosVisualizador.length
+    ){
+
+        indiceFotoVisualizador = 0;
+
+    }
+
+
+    atualizarFotoAmpliada(
+        document.getElementById(
+            "fotoAmpliada"
+        ).alt
+    );
+
+}
+
+
+/* =========================
+   FECHAR FOTO
+========================= */
+
+function fecharFoto(){
+
+    document
+    .getElementById("visualizador")
+    .classList
+    .remove("aberto");
+
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+/* =========================
+   CARRINHO
 ========================= */
 
 function adicionar(
@@ -1406,12 +1816,14 @@ function adicionar(
                 20
             ) + "px";
 
+
             clone.style.top =
             (
                 destino.top +
                 destino.height / 2 -
                 20
             ) + "px";
+
 
             clone.style.width =
             "30px";
@@ -1449,7 +1861,9 @@ function adicionar(
    CONFIRMAÇÃO
 ========================= */
 
-function mostrarConfirmacao(texto){
+function mostrarConfirmacao(
+    texto
+){
 
     const aviso =
     document.createElement("div");
@@ -1459,6 +1873,7 @@ function mostrarConfirmacao(texto){
 
     aviso.textContent =
     texto;
+
 
     document.body.appendChild(
         aviso
@@ -1530,9 +1945,7 @@ function atualizarCarrinho(){
         item.quantidade;
 
 
-        total +=
-        subtotal;
-
+        total += subtotal;
 
         quantidadeTotal +=
         item.quantidade;
@@ -1793,8 +2206,7 @@ function finalizarPedido(){
         item.quantidade;
 
 
-        total +=
-        subtotal;
+        total += subtotal;
 
 
         mensagem +=
@@ -1803,10 +2215,12 @@ function finalizarPedido(){
         produto.nome +
         "\n";
 
+
         mensagem +=
         "Tamanho: " +
         item.tamanho +
         "\n";
+
 
         mensagem +=
         "Subtotal: R$ " +
@@ -1825,7 +2239,9 @@ function finalizarPedido(){
     "https://wa.me/" +
     numeroWhatsApp +
     "?text=" +
-    encodeURIComponent(mensagem);
+    encodeURIComponent(
+        mensagem
+    );
 
 
     window.location.href =
@@ -1894,8 +2310,103 @@ document
 );
 
 
+/* BOTÕES DO VISUALIZADOR */
+
+document
+.getElementById("fecharFoto")
+.addEventListener(
+    "click",
+    fecharFoto
+);
+
+
+document
+.getElementById("fotoAnterior")
+.addEventListener(
+    "click",
+    fotoAnterior
+);
+
+
+document
+.getElementById("proximaFoto")
+.addEventListener(
+    "click",
+    proximaFoto
+);
+
+
+/* CLICAR FORA DA FOTO FECHA */
+
+document
+.getElementById("visualizador")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            document.getElementById(
+                "visualizador"
+            )
+        ){
+
+            fecharFoto();
+
+        }
+
+    }
+);
+
+
+/* TECLADO */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+    const visualizador =
+    document.getElementById(
+        "visualizador"
+    );
+
+
+    if(
+        !visualizador.classList.contains(
+            "aberto"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    if(event.key === "Escape"){
+
+        fecharFoto();
+
+    }
+
+
+    if(event.key === "ArrowLeft"){
+
+        fotoAnterior();
+
+    }
+
+
+    if(event.key === "ArrowRight"){
+
+        proximaFoto();
+
+    }
+
+});
+
+
 /* =========================
-   INICIAR SITE
+   INICIAR
 ========================= */
 
 mostrarProdutos();
