@@ -2,833 +2,1032 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MC SPORTS</title>
+<title>MC Sports</title>
 
 <style>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    background: #7a1230;
-    color: white;
+html{
+    scroll-behavior:smooth;
 }
 
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#7a1230;
+    color:#111;
+}
 
 /* =========================
-   CABEÇALHO
+   TOPO
 ========================= */
 
-header {
-    background: #004d98;
-    padding: 15px 20px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
+header{
+    background:#004d98;
+    color:white;
+    padding:16px 18px;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.topo{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.slogan {
-    font-size: 12px;
-    margin-top: 3px;
+.logo-topo{
+    font-size:28px;
+    font-weight:900;
+    font-style:italic;
+    letter-spacing:-2px;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.slogan{
+    color:#dcecff;
+    font-size:12px;
+    margin-top:3px;
 }
-
-.cart-button {
-    background: none;
-    border: none;
-    color: white;
-
-    font-size: 26px;
-
-    cursor: pointer;
-
-    position: relative;
-}
-
-.cart-counter {
-    position: absolute;
-
-    top: -8px;
-    right: -10px;
-
-    background: #ffcc00;
-    color: #000;
-
-    border-radius: 50%;
-
-    width: 20px;
-    height: 20px;
-
-    font-size: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
-}
-
-
-/* =========================
-   GERAL
-========================= */
-
-.container {
-    width: 92%;
-    max-width: 1100px;
-
-    margin: auto;
-}
-
-
-/* =========================
-   PÁGINA INICIAL
-========================= */
-
-.home {
-    text-align: center;
-
-    padding: 70px 20px;
-}
-
-.home h1 {
-    font-size: 42px;
-
-    margin-bottom: 10px;
-}
-
-.home p {
-    font-size: 18px;
-
-    margin-bottom: 30px;
-}
-
-.button {
-    background: #004d98;
-
-    color: white;
-
-    border: none;
-
-    padding: 14px 25px;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    margin: 5px;
-}
-
-.button:hover {
-    opacity: 0.9;
-}
-
-
-/* =========================
-   CATÁLOGO
-========================= */
-
-.catalogo {
-    display: none;
-
-    padding: 30px 0 60px;
-}
-
-.catalogo h2 {
-    text-align: center;
-
-    margin-bottom: 25px;
-}
-
-.produtos {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
-
-    gap: 20px;
-}
-
-
-/* =========================
-   CARD
-========================= */
-
-.card {
-
-    background: white;
-
-    color: #222;
-
-    border-radius: 12px;
-
-    padding: 15px;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,0.25);
-}
-
-
-/* =========================
-   FOTOS
-========================= */
-
-.fotos {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 8px;
-
-    margin-bottom: 15px;
-}
-
-.foto {
-
-    width: 100%;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    background: #eee;
-}
-
-
-/* ESPAÇO PARA FOTO */
-
-.placeholder {
-
-    width: 100%;
-
-    height: 220px;
-
-    background: #eee;
-
-    color: #777;
-
-    border-radius: 8px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    font-size: 15px;
-}
-
-
-/* =========================
-   INFORMAÇÕES DO PRODUTO
-========================= */
-
-.card h3 {
-
-    font-size: 17px;
-
-    margin-bottom: 10px;
-}
-
-.preco {
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    margin-bottom: 12px;
-}
-
-
-/* =========================
-   TAMANHO
-========================= */
-
-select {
-
-    width: 100%;
-
-    padding: 10px;
-
-    border-radius: 6px;
-
-    border: 1px solid #ccc;
-
-    margin-bottom: 10px;
-}
-
-
-/* =========================
-   ADICIONAR CARRINHO
-========================= */
-
-.add-cart {
-
-    width: 100%;
-
-    background: #004d98;
-
-    color: white;
-
-    border: none;
-
-    padding: 12px;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    font-size: 15px;
-}
-
-.add-cart:hover {
-    opacity: 0.9;
-}
-
-
-/* =========================
-   VOLTAR
-========================= */
-
-.voltar {
-
-    margin-bottom: 20px;
-}
-
 
 /* =========================
    CARRINHO
 ========================= */
 
-.cart-panel {
+.carrinho-btn{
+    position:relative;
+    background:transparent;
+    border:0;
+    width:48px;
+    height:48px;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-    display: none;
+.icone-carrinho{
+    width:31px;
+    height:31px;
+    fill:#ffd400;
+}
 
-    position: fixed;
+.contador{
+    position:absolute;
+    top:-2px;
+    right:-4px;
+    min-width:22px;
+    height:22px;
+    padding:0 5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ff8c00;
+    color:white;
+    border-radius:50%;
+    border:2px solid #004d98;
+    font-size:12px;
+    font-weight:900;
+}
 
-    top: 0;
-    right: 0;
+/* =========================
+   PÁGINAS
+========================= */
 
-    width: 92%;
+.pagina{
+    display:none;
+}
 
-    max-width: 420px;
+.pagina.ativa{
+    display:block;
+}
 
-    height: 100vh;
+/* =========================
+   INÍCIO
+========================= */
 
-    background: white;
+.inicio{
+    min-height:calc(100vh - 77px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
 
-    color: #222;
+    background:
+    linear-gradient(
+        135deg,
+        #004d98 0%,
+        #004d98 43%,
+        #7a1230 43%,
+        #7a1230 100%
+    );
+}
 
-    z-index: 200;
+/* =========================
+   LOGO
+========================= */
 
-    padding: 20px;
+.logo-principal{
+    width:170px;
+    height:190px;
+    margin:0 auto 24px;
+    position:relative;
+    filter:drop-shadow(0 10px 18px #0006);
+}
 
-    overflow-y: auto;
+.escudo-externo{
+    position:absolute;
+    inset:0;
+    background:#7a1230;
+
+    clip-path:polygon(
+        7% 4%,
+        93% 4%,
+        93% 60%,
+        88% 73%,
+        78% 85%,
+        50% 99%,
+        22% 85%,
+        12% 73%,
+        7% 60%
+    );
+}
+
+.escudo-interno{
+    position:absolute;
+    inset:7px;
+    background:#004d98;
+
+    clip-path:polygon(
+        7% 4%,
+        93% 4%,
+        93% 60%,
+        88% 73%,
+        78% 85%,
+        50% 99%,
+        22% 85%,
+        12% 73%,
+        7% 60%
+    );
+}
+
+.logo-linha{
+    position:absolute;
+    width:112px;
+    height:4px;
+    background:white;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.logo-mc{
+    position:absolute;
+    z-index:2;
+    top:65px;
+    left:50%;
+    transform:translateX(-50%) skew(-8deg);
+    color:white;
+    font-size:60px;
+    font-weight:1000;
+    font-style:italic;
+    letter-spacing:-9px;
+    text-shadow:
+    3px 3px 0 #7a1230,
+    -1px -1px 0 #fff;
+}
+
+.logo-sports{
+    position:absolute;
+    z-index:3;
+    bottom:31px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:4px;
+    white-space:nowrap;
+}
+
+.logo-ano{
+    position:absolute;
+    z-index:3;
+    top:27px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    font-size:9px;
+    font-weight:bold;
+    letter-spacing:2px;
+    white-space:nowrap;
+}
+
+.inicio h1{
+    color:white;
+    font-size:53px;
+    font-weight:900;
+    font-style:italic;
+    letter-spacing:-4px;
+    text-shadow:3px 4px 0 #7a1230;
+}
+
+.inicio p{
+    color:#eee;
+    font-size:17px;
+    margin:8px 0 28px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes-inicio{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:min(300px,100%);
+    margin:auto;
+}
+
+.botao-camisas,
+.botao-whatsapp{
+    border:0;
+    padding:15px 20px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.botao-camisas{
+    background:white;
+    color:#004d98;
+}
+
+.botao-whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.produtos-area{
+    background:#7a1230;
+    min-height:calc(100vh - 77px);
+    padding:30px 0 55px;
+}
+
+.barra-produtos{
+    max-width:1100px;
+    margin:0 auto 25px;
+    padding:0 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.titulo-produtos{
+    color:white;
+    font-size:30px;
+    font-weight:900;
+}
+
+.voltar{
+    background:white;
+    color:#004d98;
+    border:0;
+    padding:10px 15px;
+    border-radius:9px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:0 18px;
+}
+
+.produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:24px;
+}
+
+/* =========================
+   PRODUTO
+========================= */
+
+.produto{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 18px #0003;
+}
+
+.galeria{
+    position:relative;
+    height:340px;
+    background:#eee;
+    overflow:hidden;
+}
+
+/* IMPORTANTE:
+   cursor indica que a foto pode ser ampliada */
+
+.galeria img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+    cursor:zoom-in;
+}
+
+.galeria img.ativa{
+    display:block;
+}
+
+.seta{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:38px;
+    height:38px;
+    border:0;
+    border-radius:50%;
+    background:#ffffffdd;
+    color:#000;
+    font-size:22px;
+    cursor:pointer;
+    z-index:2;
+}
+
+.esquerda{
+    left:10px;
+}
+
+.direita{
+    right:10px;
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.info{
+    padding:18px;
+}
+
+.info h2{
+    font-size:19px;
+    line-height:1.3;
+    margin-bottom:8px;
+}
+
+.tamanho-label{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    margin-top:12px;
+    margin-bottom:6px;
+}
+
+.seletor-tamanho{
+    width:100%;
+    padding:11px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    background:white;
+    color:#111;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.preco{
+    font-size:24px;
+    font-weight:bold;
+    margin:14px 0;
+}
+
+.adicionar{
+    width:100%;
+    padding:14px;
+    background:#004d98;
+    color:white;
+    border:0;
+    border-radius:9px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+}
+
+/* =========================
+   VISUALIZADOR DE FOTO
+========================= */
+
+.visualizador{
+    position:fixed;
+    inset:0;
+    background:#000e;
+    z-index:1000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.visualizador.aberto{
+    display:flex;
+}
+
+.visualizador-conteudo{
+    position:relative;
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.visualizador img{
+    max-width:90%;
+    max-height:90%;
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+
+    border-radius:8px;
 
     box-shadow:
-        -5px 0 15px rgba(0,0,0,0.3);
+    0 10px 40px #0008;
 }
 
-.cart-panel h2 {
+/* BOTÃO FECHAR */
 
-    margin-bottom: 15px;
+.fechar-foto{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    width:45px;
+    height:45px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#ffffffdd;
+    color:#111;
+
+    font-size:28px;
+    line-height:1;
+
+    cursor:pointer;
+
+    z-index:3;
 }
 
-.fechar-carrinho {
+/* SETAS DA FOTO GRANDE */
 
-    float: right;
+.seta-foto{
+    position:absolute;
 
-    background: none;
+    top:50%;
+    transform:translateY(-50%);
 
-    border: none;
+    width:50px;
+    height:50px;
 
-    font-size: 25px;
+    border:0;
+    border-radius:50%;
 
-    cursor: pointer;
+    background:#ffffffdd;
+
+    color:#111;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    z-index:3;
 }
 
+.seta-foto.esquerda-foto{
+    left:15px;
+}
+
+.seta-foto.direita-foto{
+    right:15px;
+}
+
+/* =========================
+   CARRINHO
+========================= */
+
+.carrinho{
+    position:fixed;
+    right:0;
+    top:0;
+    width:min(420px,100%);
+    height:100%;
+    background:white;
+    z-index:200;
+    padding:22px;
+    overflow-y:auto;
+    box-shadow:-5px 0 20px #0003;
+    display:none;
+}
+
+.carrinho.aberto{
+    display:block;
+}
+
+.fechar{
+    float:right;
+    border:0;
+    background:#eee;
+    padding:8px 12px;
+    border-radius:7px;
+    cursor:pointer;
+}
 
 /* =========================
    EXCLUIR TUDO
 ========================= */
 
-.excluir-tudo {
-
-    width: 100%;
-
-    padding: 12px;
-
-    margin-bottom: 15px;
-
-    background: #d11a2a;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 7px;
-
-    font-size: 15px;
-
-    cursor: pointer;
+.excluir-tudo{
+    width:100%;
+    margin-top:15px;
+    padding:11px;
+    border:1px solid #ddd;
+    border-radius:9px;
+    background:white;
+    color:#c40000;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.excluir-tudo:hover {
-    opacity: 0.9;
+.excluir-tudo:hover{
+    background:#fff4f4;
 }
-
 
 /* =========================
-   ITEM DO CARRINHO
+   ITENS DO CARRINHO
 ========================= */
 
-.swipe-container {
-
-    position: relative;
-
-    overflow: hidden;
-
-    margin-bottom: 10px;
-
-    border-radius: 8px;
+.item{
+    position:relative;
+    overflow:hidden;
+    padding:16px 0;
+    border-bottom:1px solid #eee;
 }
 
-
-/* LIXEIRA */
-
-.lixeira {
-
-    position: absolute;
-
-    right: 0;
-    top: 0;
-
-    width: 80px;
-    height: 100%;
-
-    background: #d11a2a;
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 24px;
+.item-conteudo{
+    position:relative;
+    z-index:2;
+    background:white;
+    transform:translateX(0);
+    transition:transform .25s ease;
 }
 
+.item-excluir{
+    position:absolute;
+    top:0;
+    right:0;
+    width:82px;
+    height:100%;
+    border:0;
+    background:#d00000;
+    color:white;
+    cursor:pointer;
 
-/* ITEM */
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-.swipe-item {
-
-    position: relative;
-
-    background: white;
-
-    z-index: 2;
-
-    transition:
-        transform 0.25s ease;
-
-    touch-action: pan-y;
+    z-index:1;
 }
 
-.cart-item {
-
-    border-bottom:
-        1px solid #ddd;
-
-    padding: 12px 0;
+.icone-lixeira{
+    width:27px;
+    height:27px;
+    fill:white;
 }
 
-.cart-item h3 {
-
-    font-size: 16px;
-
-    margin-bottom: 8px;
+.item-produto{
+    display:flex;
+    gap:12px;
+    align-items:center;
 }
 
-.quantidade {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 8px;
+.item-produto img{
+    width:75px;
+    height:75px;
+    object-fit:cover;
+    border-radius:8px;
+    background:#eee;
 }
 
-.quantidade button {
-
-    width: 30px;
-
-    height: 30px;
-
-    border: none;
-
-    background: #004d98;
-
-    color: white;
-
-    border-radius: 5px;
-
-    cursor: pointer;
+.item-info{
+    flex:1;
 }
 
+.item-tamanho{
+    margin-top:5px;
+    color:#777;
+    font-size:14px;
+}
+
+.quantidade{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+}
+
+.quantidade button{
+    width:30px;
+    height:30px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.total{
+    font-size:22px;
+    font-weight:bold;
+    margin:25px 0;
+}
+
+.whatsapp{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:10px;
+    background:#25D366;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.continuar{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:white;
+    color:#111;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
 /* =========================
-   TOTAL
+   CONFIRMAÇÃO
 ========================= */
 
-.total {
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    margin: 20px 0;
+.confirmacao{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:#111;
+    color:white;
+    padding:12px 18px;
+    border-radius:9px;
+    font-size:14px;
+    font-weight:bold;
+    z-index:9999;
+    white-space:nowrap;
 }
-
 
 /* =========================
-   ENTREGA
+   RODAPÉ
 ========================= */
 
-.entrega {
-
-    margin-top: 20px;
+footer{
+    text-align:center;
+    padding:35px 20px;
+    background:#050505;
+    color:#aaa;
 }
-
-.entrega h3 {
-
-    margin-bottom: 10px;
-}
-
-.entrega input {
-
-    width: 100%;
-
-    padding: 11px;
-
-    margin-bottom: 10px;
-
-    border:
-        1px solid #ccc;
-
-    border-radius: 6px;
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp-finalizar {
-
-    width: 100%;
-
-    background: #25D366;
-
-    color: white;
-
-    border: none;
-
-    padding: 14px;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   MODAL DAS FOTOS
-========================= */
-
-.modal {
-
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(0,0,0,0.95);
-
-    z-index: 500;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.modal img {
-
-    max-width: 90%;
-
-    max-height: 85%;
-
-    object-fit: contain;
-}
-
-.fechar-modal {
-
-    position: absolute;
-
-    top: 20px;
-    right: 25px;
-
-    color: white;
-
-    font-size: 35px;
-
-    background: none;
-
-    border: none;
-
-    cursor: pointer;
-}
-
-.seta {
-
-    position: absolute;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    background:
-        rgba(255,255,255,0.2);
-
-    color: white;
-
-    border: none;
-
-    font-size: 35px;
-
-    width: 50px;
-
-    height: 60px;
-
-    cursor: pointer;
-
-    border-radius: 8px;
-}
-
-.seta-esquerda {
-    left: 15px;
-}
-
-.seta-direita {
-    right: 15px;
-}
-
 
 /* =========================
    CELULAR
 ========================= */
 
-@media (max-width: 600px) {
+@media(max-width:500px){
 
-    .home h1 {
-        font-size: 34px;
+    .inicio h1{
+        font-size:43px;
     }
 
-    .produtos {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 10px;
+    .logo-principal{
+        width:145px;
+        height:165px;
     }
 
-    .card {
-        padding: 10px;
+    .logo-mc{
+        font-size:50px;
+        top:57px;
     }
 
-    .foto,
-    .placeholder {
-
-        height: 180px;
+    .logo-sports{
+        bottom:27px;
+        font-size:12px;
     }
 
-    .card h3 {
-
-        font-size: 14px;
+    .titulo-produtos{
+        font-size:25px;
     }
 
-    .preco {
-
-        font-size: 17px;
+    .produtos{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
     }
+
+    .galeria{
+        height:260px;
+    }
+
+    .info{
+        padding:13px;
+    }
+
+    .info h2{
+        font-size:16px;
+    }
+
+    .preco{
+        font-size:20px;
+    }
+
+    .adicionar{
+        padding:11px;
+        font-size:13px;
+    }
+
+    /* FOTO GRANDE NO CELULAR */
+
+    .visualizador{
+        padding:10px;
+    }
+
+    .visualizador img{
+        max-width:96%;
+        max-height:85%;
+    }
+
+    .seta-foto{
+        width:42px;
+        height:42px;
+        font-size:27px;
+    }
+
+    .seta-foto.esquerda-foto{
+        left:8px;
+    }
+
+    .seta-foto.direita-foto{
+        right:8px;
+    }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-
 <!-- =========================
-     CABEÇALHO
+     TOPO
 ========================= -->
 
 <header>
 
-    <div>
+<div class="topo">
 
-        <div class="logo">
-            MC SPORTS
-        </div>
+<div>
 
-        <div class="slogan">
-            A loja do seu time
-        </div>
+<div class="logo-topo">
+MC SPORTS
+</div>
 
-    </div>
+<div class="slogan">
+A loja do seu time
+</div>
 
+</div>
 
-    <div class="header-right">
+<button
+id="botaoCarrinho"
+class="carrinho-btn"
+type="button">
 
-        <button
-            class="cart-button"
-            id="abrirCarrinho">
+<svg
+class="icone-carrinho"
+viewBox="0 0 24 24"
+xmlns="http://www.w3.org/2000/svg">
 
-            🛒
+<path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45C5.09 14.32 5 14.65 5 15c0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L20.88 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-1.99-2z"/>
 
-            <span
-                class="cart-counter"
-                id="cartCounter">
+</svg>
 
-                0
+<span
+class="contador"
+id="contador">
 
-            </span>
+0
 
-        </button>
+</span>
 
-    </div>
+</button>
+
+</div>
 
 </header>
 
 
 <!-- =========================
-     CONTEÚDO
+     INÍCIO
 ========================= -->
 
-<main>
-
-
-<!-- INÍCIO -->
-
 <section
-    class="home"
-    id="inicio">
+class="pagina ativa"
+id="pagina-inicio">
 
-    <h1>
-        MC SPORTS
-    </h1>
+<div class="inicio">
 
-    <p>
-        A loja do seu time
-    </p>
+<div>
 
+<div class="logo-principal">
 
-    <button
-        class="button"
-        id="verCamisas">
+<div class="escudo-externo"></div>
+<div class="escudo-interno"></div>
 
-        Ver camisas
+<div class="logo-ano">
+MC SPORTS
+</div>
 
-    </button>
+<div class="logo-linha"></div>
 
+<div class="logo-mc">
+MC
+</div>
 
-    <button
-        class="button"
-        id="whatsappDuvidas">
+<div class="logo-sports">
+SPORTS
+</div>
 
-        WhatsApp — Dúvidas
+</div>
 
-    </button>
+<h1>
+MC SPORTS
+</h1>
+
+<p>
+A loja do seu time
+</p>
+
+<div class="botoes-inicio">
+
+<button
+id="botaoCamisas"
+class="botao-camisas"
+type="button">
+
+Ver camisas
+
+</button>
+
+<button
+id="botaoAjuda"
+class="botao-whatsapp"
+type="button">
+
+WhatsApp — Dúvidas
+
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
-
 
 
 <!-- =========================
-     CATÁLOGO
+     PRODUTOS
 ========================= -->
 
 <section
-    class="catalogo container"
-    id="catalogo">
+class="pagina"
+id="pagina-produtos">
 
+<div class="produtos-area">
 
-    <button
-        class="button voltar"
-        id="voltarInicio">
+<div class="barra-produtos">
 
-        ← Voltar
+<h2 class="titulo-produtos">
+Nossas camisas
+</h2>
 
-    </button>
+<button
+id="botaoVoltar"
+class="voltar"
+type="button">
 
+← Voltar
 
-    <h2>
-        Camisas disponíveis
-    </h2>
+</button>
 
+</div>
 
-    <div
-        class="produtos"
-        id="produtos">
-    </div>
+<main class="container">
 
+<div
+class="produtos"
+id="produtos">
 
-</section>
+</div>
 
 </main>
 
+</div>
+
+</section>
+
+
+<!-- =========================
+     VISUALIZADOR
+========================= -->
+
+<div
+id="visualizador"
+class="visualizador">
+
+<div class="visualizador-conteudo">
+
+<button
+id="fecharFoto"
+class="fechar-foto"
+type="button">
+
+×
+
+</button>
+
+<button
+id="fotoAnterior"
+class="seta-foto esquerda-foto"
+type="button">
+
+‹
+
+</button>
+
+<img
+id="fotoAmpliada"
+src=""
+alt="Foto ampliada">
+
+<button
+id="proximaFoto"
+class="seta-foto direita-foto"
+type="button">
+
+›
+
+</button>
+
+</div>
+
+</div>
 
 
 <!-- =========================
@@ -836,153 +1035,79 @@ select {
 ========================= -->
 
 <div
-    class="cart-panel"
-    id="cartPanel">
+class="carrinho"
+id="carrinho">
 
+<button
+id="botaoFecharCarrinho"
+class="fechar"
+type="button">
 
-    <button
-        class="fechar-carrinho"
-        id="fecharCarrinho">
+Fechar
 
-        ×
+</button>
 
-    </button>
+<h2>
+Seu carrinho
+</h2>
 
+<button
+id="botaoExcluirTudo"
+class="excluir-tudo"
+type="button">
 
-    <h2>
-        Seu carrinho
-    </h2>
+Excluir tudo
 
+</button>
 
-    <button
-        class="excluir-tudo"
-        id="excluirTudo">
+<div id="itens"></div>
 
-        Excluir tudo
+<div class="total">
 
-    </button>
+Total: R$
 
+<span id="total">
+0,00
+</span>
 
-    <div
-        id="cartItems">
-    </div>
+</div>
 
+<button
+id="botaoFinalizar"
+class="whatsapp"
+type="button">
 
-    <div class="total">
+Finalizar pedido pelo WhatsApp
 
-        Total:
-        R$
-        <span id="cartTotal">
-            0,00
-        </span>
+</button>
 
-    </div>
+<button
+id="botaoContinuar"
+class="continuar"
+type="button">
 
+Continuar comprando
 
-
-    <!-- DADOS DE ENTREGA -->
-
-    <div class="entrega">
-
-
-        <h3>
-            Dados de entrega
-        </h3>
-
-
-        <input
-            type="text"
-            id="nome"
-            placeholder="Nome">
-
-
-        <input
-            type="text"
-            id="bairro"
-            placeholder="Bairro">
-
-
-        <input
-            type="text"
-            id="rua"
-            placeholder="Rua">
-
-
-        <input
-            type="text"
-            id="numero"
-            placeholder="Número da casa">
-
-
-        <button
-            class="whatsapp-finalizar"
-            id="finalizarWhatsApp">
-
-            Finalizar pedido pelo WhatsApp
-
-        </button>
-
-    </div>
+</button>
 
 </div>
 
 
+<footer>
 
-<!-- =========================
-     MODAL DAS FOTOS
-========================= -->
+MC Sports — A loja do seu time
 
-<div
-    class="modal"
-    id="modal">
-
-
-    <button
-        class="fechar-modal"
-        id="fecharModal">
-
-        ×
-
-    </button>
-
-
-    <button
-        class="seta seta-esquerda"
-        id="fotoAnterior">
-
-        ‹
-
-    </button>
-
-
-    <img
-        id="imagemModal"
-        src=""
-        alt="Camisa">
-
-
-    <button
-        class="seta seta-direita"
-        id="proximaFoto">
-
-        ›
-
-    </button>
-
-</div>
-
+</footer>
 
 
 <script>
 
-
 /* =========================
-   WHATSAPP
+   CONFIGURAÇÃO
 ========================= */
 
-const WHATSAPP =
-    "5592994486162";
-
+const numeroWhatsApp =
+"5592994486162";
 
 
 /* =========================
@@ -991,174 +1116,178 @@ const WHATSAPP =
 
 const produtos = [
 
+{
+    id:1,
 
-    /* CAMISAS QUE JÁ POSSUEM FOTOS */
+    time:"Chelsea",
 
+    nome:
+    "Camisa Chelsea 26/27 — Principal",
 
-    {
-        id: 1,
+    preco:60,
 
-        nome:
-            "Camisa Chelsea 26/27 - Principal",
+    fotos:[
 
-        preco: 60,
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7160.jpeg",
 
-        fotos: [
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7161.jpeg",
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7160.jpeg",
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7162.jpeg",
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7161.jpeg",
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7163.jpeg"
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7162.jpeg",
+    ]
+},
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7163.jpeg"
+{
+    id:2,
 
-        ]
-    },
+    time:"Corinthians",
 
+    nome:
+    "Camisa Corinthians 2026 — Torcedor",
 
-    {
-        id: 2,
+    preco:60,
 
-        nome:
-            "Camisa Corinthians 2026 - Torcedor",
+    fotos:[
 
-        preco: 60,
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7156.jpeg",
 
-        fotos: [
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7159.jpeg"
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7156.jpeg",
+    ]
+},
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7159.jpeg"
+{
+    id:3,
 
-        ]
-    },
+    time:"Flamengo",
 
+    nome:
+    "Camisa Flamengo 2026 — Principal",
 
-    {
-        id: 3,
+    preco:60,
 
-        nome:
-            "Camisa Flamengo 2026 - Principal",
+    fotos:[
 
-        preco: 60,
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7164.jpeg",
 
-        fotos: [
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7167.jpeg"
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7164.jpeg",
+    ]
+},
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7167.jpeg"
+{
+    id:4,
 
-        ]
-    },
+    time:"Milan",
 
+    nome:
+    "Camisa Milan 26/27 — Principal",
 
-    {
-        id: 4,
+    preco:60,
 
-        nome:
-            "Camisa Milan 26/27 - Principal",
+    fotos:[
 
-        preco: 60,
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7168.jpeg",
 
-        fotos: [
+        "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7171.jpeg"
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7168.jpeg",
+    ]
+},
 
-            "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7171.jpeg"
+{
+    id:5,
 
-        ]
-    },
+    time:"Vasco",
 
+    nome:
+    "Camisa Vasco 2026 — Visitante",
 
-    /* NOVAS CAMISAS */
+    preco:60,
 
+    fotos:[]
+},
 
-    {
-        id: 5,
+{
+    id:6,
 
-        nome:
-            "Camisa Vasco 2026 - Visitante",
+    time:"Barcelona",
 
-        preco: 60,
+    nome:
+    "Camisa Barcelona 26/27 — Principal",
 
-        fotos: []
-    },
+    preco:60,
 
+    fotos:[]
+},
 
-    {
-        id: 6,
+{
+    id:7,
 
-        nome:
-            "Camisa Barcelona 26/27 - Principal",
+    time:"Corinthians",
 
-        preco: 60,
+    nome:
+    "Camisa Corinthians 2026 — Visitante",
 
-        fotos: []
-    },
+    preco:60,
 
+    fotos:[]
+},
 
-    {
-        id: 7,
+{
+    id:8,
 
-        nome:
-            "Camisa Corinthians 2026 - Visitante",
+    time:"Manchester United",
 
-        preco: 60,
+    nome:
+    "Camisa United 26/27 — Principal",
 
-        fotos: []
-    },
+    preco:60,
 
+    fotos:[]
+},
 
-    {
-        id: 8,
+{
+    id:9,
 
-        nome:
-            "Camisa United 26/27 - Principal",
+    time:"Real Madrid",
 
-        preco: 60,
+    nome:
+    "Camisa Real Madrid 26/27 — Principal",
 
-        fotos: []
-    },
+    preco:60,
 
+    fotos:[]
+},
 
-    {
-        id: 9,
+{
+    id:10,
 
-        nome:
-            "Camisa Real Madrid 26/27 - Principal",
+    time:"São Paulo",
 
-        preco: 60,
+    nome:
+    "Camisa São Paulo 2026 — Principal",
 
-        fotos: []
-    },
+    preco:60,
 
+    fotos:[]
+},
 
-    {
-        id: 10,
+{
+    id:11,
 
-        nome:
-            "Camisa São Paulo 2026 - Principal",
+    time:"Chelsea",
 
-        preco: 60,
+    nome:
+    "Camisa Chelsea 26/27 — Visitante",
 
-        fotos: []
-    },
+    preco:60,
 
-
-    {
-        id: 11,
-
-        nome:
-            "Camisa Chelsea 26/27 - Visitante",
-
-        preco: 60,
-
-        fotos: []
-    }
+    fotos:[]
+}
 
 ];
-
 
 
 /* =========================
@@ -1168,254 +1297,607 @@ const produtos = [
 let carrinho = [];
 
 
+/* =========================
+   CONTROLE DA FOTO AMPLIADA
+========================= */
+
+let fotosVisualizador = [];
+
+let indiceFotoVisualizador = 0;
+
+
+/* =========================
+   DINHEIRO
+========================= */
+
+function dinheiro(valor){
+
+    return valor.toLocaleString(
+        "pt-BR",
+        {
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        }
+    );
+
+}
+
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+function abrirProdutos(){
+
+    document
+    .getElementById("pagina-inicio")
+    .classList
+    .remove("ativa");
+
+    document
+    .getElementById("pagina-produtos")
+    .classList
+    .add("ativa");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function voltarInicio(){
+
+    document
+    .getElementById("pagina-produtos")
+    .classList
+    .remove("ativa");
+
+    document
+    .getElementById("pagina-inicio")
+    .classList
+    .add("ativa");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function abrirWhatsApp(){
+
+    const mensagem =
+    "Olá! Estou no site da MC Sports e gostaria de tirar uma dúvida.";
+
+    const url =
+    "https://wa.me/" +
+    numeroWhatsApp +
+    "?text=" +
+    encodeURIComponent(mensagem);
+
+    window.location.href =
+    url;
+
+}
+
 
 /* =========================
    MOSTRAR PRODUTOS
 ========================= */
 
-function mostrarProdutos() {
+function mostrarProdutos(){
+
+    const area =
+    document.getElementById("produtos");
+
+    area.innerHTML = "";
 
 
-    const container =
-        document.getElementById("produtos");
-
-
-    container.innerHTML = "";
-
-
-    produtos.forEach(produto => {
-
+    produtos.forEach(
+    function(produto){
 
         const card =
-            document.createElement("div");
+        document.createElement("div");
+
+        card.className =
+        "produto";
 
 
-        card.className = "card";
+        /* GALERIA */
+
+        const galeria =
+        document.createElement("div");
+
+        galeria.className =
+        "galeria";
 
 
-        /* FOTOS */
+        produto.fotos.forEach(
+        function(foto,index){
 
-        const fotos =
-            document.createElement("div");
+            const imagem =
+            document.createElement("img");
 
+            imagem.src =
+            foto;
 
-        fotos.className = "fotos";
+            imagem.alt =
+            produto.nome;
 
+            if(index === 0){
 
-        if (produto.fotos.length > 0) {
-
-
-            produto.fotos.forEach(
-                (foto, index) => {
-
-
-                const img =
-                    document.createElement("img");
-
-
-                img.src = foto;
-
-                img.className = "foto";
-
-                img.alt = produto.nome;
-
-
-                img.addEventListener(
-                    "click",
-                    () => {
-
-                        abrirModal(
-                            produto.id,
-                            index
-                        );
-
-                    }
+                imagem.classList.add(
+                    "ativa"
                 );
 
-
-                fotos.appendChild(img);
-
-            });
+            }
 
 
-        } else {
+            /* AO CLICAR NA FOTO,
+               ABRE A FOTO GRANDE */
+
+            imagem.addEventListener(
+                "click",
+                function(){
+
+                    abrirVisualizador(
+                        produto.fotos,
+                        index,
+                        produto.nome
+                    );
+
+                }
+            );
 
 
-            const placeholder =
-                document.createElement("div");
+            galeria.appendChild(
+                imagem
+            );
+
+        });
 
 
-            placeholder.className =
-                "placeholder";
+        /* SETAS DA GALERIA */
+
+        if(produto.fotos.length > 1){
+
+            const esquerda =
+            document.createElement("button");
+
+            esquerda.className =
+            "seta esquerda";
+
+            esquerda.type =
+            "button";
+
+            esquerda.innerHTML =
+            "‹";
 
 
-            placeholder.innerHTML =
-                "ESPAÇO PARA<br>FOTO DA CAMISA";
+            esquerda.addEventListener(
+                "click",
+                function(event){
+
+                    event.stopPropagation();
+
+                    mudarFoto(
+                        galeria,
+                        -1
+                    );
+
+                }
+            );
 
 
-            fotos.appendChild(
-                placeholder
+            const direita =
+            document.createElement("button");
+
+            direita.className =
+            "seta direita";
+
+            direita.type =
+            "button";
+
+            direita.innerHTML =
+            "›";
+
+
+            direita.addEventListener(
+                "click",
+                function(event){
+
+                    event.stopPropagation();
+
+                    mudarFoto(
+                        galeria,
+                        1
+                    );
+
+                }
+            );
+
+
+            galeria.appendChild(
+                esquerda
+            );
+
+            galeria.appendChild(
+                direita
             );
 
         }
 
 
+        /* INFORMAÇÕES */
 
-        /* TÍTULO */
+        const info =
+        document.createElement("div");
+
+        info.className =
+        "info";
+
 
         const titulo =
-            document.createElement("h3");
-
+        document.createElement("h2");
 
         titulo.textContent =
-            produto.nome;
+        produto.nome;
 
 
+        const label =
+        document.createElement("label");
 
-        /* PREÇO */
+        label.className =
+        "tamanho-label";
 
-        const preco =
-            document.createElement("div");
-
-
-        preco.className =
-            "preco";
-
-
-        preco.textContent =
-            "R$ " +
-            produto.preco
-                .toFixed(2)
-                .replace(".", ",");
+        label.textContent =
+        "Escolha o tamanho:";
 
 
+        const seletor =
+        document.createElement("select");
 
-        /* TAMANHO */
+        seletor.className =
+        "seletor-tamanho";
 
-        const select =
-            document.createElement("select");
-
-
-        select.innerHTML = `
-
-            <option value="">
-                Escolha o tamanho
-            </option>
-
-            <option value="P">
-                P
-            </option>
-
-            <option value="M">
-                M
-            </option>
-
-            <option value="G">
-                G
-            </option>
-
-            <option value="GG">
-                GG
-            </option>
-
+        seletor.innerHTML = `
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
         `;
 
 
+        const preco =
+        document.createElement("div");
 
-        /* BOTÃO */
+        preco.className =
+        "preco";
 
-        const button =
-            document.createElement("button");
-
-
-        button.className =
-            "add-cart";
-
-
-        button.textContent =
-            "Adicionar ao carrinho";
+        preco.textContent =
+        "R$ " +
+        dinheiro(produto.preco);
 
 
-        button.addEventListener(
+        const adicionarBtn =
+        document.createElement("button");
+
+        adicionarBtn.className =
+        "adicionar";
+
+        adicionarBtn.type =
+        "button";
+
+        adicionarBtn.textContent =
+        "Adicionar ao carrinho";
+
+
+        adicionarBtn.addEventListener(
             "click",
-            () => {
+            function(){
 
-
-                if (!select.value) {
-
-                    alert(
-                        "Escolha um tamanho."
-                    );
-
-                    return;
-                }
-
-
-                adicionarCarrinho(
-                    produto,
-                    select.value
+                adicionar(
+                    produto.id,
+                    seletor.value,
+                    galeria
                 );
 
             }
         );
 
 
-
-        card.appendChild(fotos);
-
-        card.appendChild(titulo);
-
-        card.appendChild(preco);
-
-        card.appendChild(select);
-
-        card.appendChild(button);
+        info.appendChild(titulo);
+        info.appendChild(label);
+        info.appendChild(seletor);
+        info.appendChild(preco);
+        info.appendChild(adicionarBtn);
 
 
-        container.appendChild(card);
+        card.appendChild(galeria);
+        card.appendChild(info);
+
+
+        area.appendChild(card);
 
     });
 
 }
 
 
-
 /* =========================
-   ADICIONAR CARRINHO
+   TROCAR FOTO NA GALERIA
 ========================= */
 
-function adicionarCarrinho(
-    produto,
-    tamanho
-) {
+function mudarFoto(
+    galeria,
+    direcao
+){
+
+    const fotos =
+    galeria.querySelectorAll("img");
+
+
+    if(fotos.length <= 1){
+        return;
+    }
+
+
+    let atual = 0;
+
+
+    fotos.forEach(
+    function(foto,index){
+
+        if(
+            foto.classList.contains("ativa")
+        ){
+
+            atual = index;
+
+        }
+
+    });
+
+
+    fotos[atual]
+    .classList
+    .remove("ativa");
+
+
+    let nova =
+    atual + direcao;
+
+
+    if(nova < 0){
+
+        nova =
+        fotos.length - 1;
+
+    }
+
+
+    if(nova >= fotos.length){
+
+        nova = 0;
+
+    }
+
+
+    fotos[nova]
+    .classList
+    .add("ativa");
+
+}
+
+
+/* =========================
+   ABRIR FOTO AMPLIADA
+========================= */
+
+function abrirVisualizador(
+    fotos,
+    indice,
+    nome
+){
+
+    if(fotos.length === 0){
+        return;
+    }
+
+    fotosVisualizador =
+    fotos.slice();
+
+    indiceFotoVisualizador =
+    indice;
+
+
+    atualizarFotoAmpliada(
+        nome
+    );
+
+
+    document
+    .getElementById("visualizador")
+    .classList
+    .add("aberto");
+
+
+    document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* =========================
+   ATUALIZAR FOTO AMPLIADA
+========================= */
+
+function atualizarFotoAmpliada(
+    nome
+){
+
+    const imagem =
+    document.getElementById(
+        "fotoAmpliada"
+    );
+
+
+    imagem.src =
+    fotosVisualizador[
+        indiceFotoVisualizador
+    ];
+
+
+    imagem.alt =
+    nome;
+
+}
+
+
+/* =========================
+   FOTO ANTERIOR
+========================= */
+
+function fotoAnterior(){
+
+    if(
+        fotosVisualizador.length === 0
+    ){
+        return;
+    }
+
+
+    indiceFotoVisualizador--;
+
+
+    if(
+        indiceFotoVisualizador < 0
+    ){
+
+        indiceFotoVisualizador =
+        fotosVisualizador.length - 1;
+
+    }
+
+
+    atualizarFotoAmpliada(
+        document.getElementById(
+            "fotoAmpliada"
+        ).alt
+    );
+
+}
+
+
+/* =========================
+   PRÓXIMA FOTO
+========================= */
+
+function proximaFoto(){
+
+    if(
+        fotosVisualizador.length === 0
+    ){
+        return;
+    }
+
+
+    indiceFotoVisualizador++;
+
+
+    if(
+        indiceFotoVisualizador >=
+        fotosVisualizador.length
+    ){
+
+        indiceFotoVisualizador = 0;
+
+    }
+
+
+    atualizarFotoAmpliada(
+        document.getElementById(
+            "fotoAmpliada"
+        ).alt
+    );
+
+}
+
+
+/* =========================
+   FECHAR FOTO
+========================= */
+
+function fecharFoto(){
+
+    document
+    .getElementById("visualizador")
+    .classList
+    .remove("aberto");
+
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+/* =========================
+   CARRINHO
+========================= */
+
+function adicionar(
+    id,
+    tamanho,
+    galeria
+){
+
+    const produto =
+    produtos.find(
+        function(p){
+
+            return p.id === id;
+
+        }
+    );
+
+
+    if(!produto){
+        return;
+    }
 
 
     const existente =
-        carrinho.find(
-            item =>
-                item.id === produto.id &&
+    carrinho.find(
+        function(item){
+
+            return (
+                item.id === id &&
                 item.tamanho === tamanho
-        );
+            );
+
+        }
+    );
 
 
-    if (existente) {
+    if(existente){
 
         existente.quantidade++;
 
-    } else {
-
+    }else{
 
         carrinho.push({
 
-            id: produto.id,
-
-            nome: produto.nome,
-
-            preco: produto.preco,
-
-            tamanho: tamanho,
-
-            quantidade: 1
+            id:id,
+            tamanho:tamanho,
+            quantidade:1
 
         });
 
@@ -1425,40 +1907,371 @@ function adicionarCarrinho(
     atualizarCarrinho();
 
 
-    alert(
-        "Camisa adicionada ao carrinho."
+    /* ANIMAÇÃO */
+
+    const imagem =
+    galeria.querySelector(
+        "img.ativa"
+    );
+
+
+    const carrinhoBtn =
+    document.getElementById(
+        "botaoCarrinho"
+    );
+
+
+    if(imagem){
+
+        const clone =
+        imagem.cloneNode(true);
+
+        const inicio =
+        imagem.getBoundingClientRect();
+
+        const destino =
+        carrinhoBtn.getBoundingClientRect();
+
+
+        clone.style.position =
+        "fixed";
+
+        clone.style.left =
+        inicio.left + "px";
+
+        clone.style.top =
+        inicio.top + "px";
+
+        clone.style.width =
+        "70px";
+
+        clone.style.height =
+        "70px";
+
+        clone.style.objectFit =
+        "cover";
+
+        clone.style.zIndex =
+        "9999";
+
+        clone.style.borderRadius =
+        "10px";
+
+        clone.style.pointerEvents =
+        "none";
+
+        clone.style.transition =
+        "all .6s ease";
+
+
+        document.body.appendChild(
+            clone
+        );
+
+
+        requestAnimationFrame(
+        function(){
+
+            clone.style.left =
+            (
+                destino.left +
+                destino.width / 2 -
+                20
+            ) + "px";
+
+
+            clone.style.top =
+            (
+                destino.top +
+                destino.height / 2 -
+                20
+            ) + "px";
+
+
+            clone.style.width =
+            "30px";
+
+            clone.style.height =
+            "30px";
+
+            clone.style.opacity =
+            "0";
+
+        });
+
+
+        setTimeout(
+        function(){
+
+            clone.remove();
+
+        },650);
+
+    }
+
+
+    mostrarConfirmacao(
+        produto.time +
+        " — tamanho " +
+        tamanho +
+        " adicionado ao carrinho"
     );
 
 }
 
+
+/* =========================
+   CONFIRMAÇÃO
+========================= */
+
+function mostrarConfirmacao(
+    texto
+){
+
+    const aviso =
+    document.createElement("div");
+
+    aviso.className =
+    "confirmacao";
+
+    aviso.textContent =
+    texto;
+
+
+    document.body.appendChild(
+        aviso
+    );
+
+
+    setTimeout(
+    function(){
+
+        aviso.remove();
+
+    },1500);
+
+}
+
+
+/* =========================
+   EXCLUIR ITEM
+========================= */
+
+function excluirItem(
+    id,
+    tamanho
+){
+
+    carrinho =
+    carrinho.filter(
+        function(item){
+
+            return !(
+                item.id === id &&
+                item.tamanho === tamanho
+            );
+
+        }
+    );
+
+
+    atualizarCarrinho();
+
+}
+
+
+/* =========================
+   EXCLUIR TUDO
+========================= */
+
+function excluirTudo(){
+
+    if(carrinho.length === 0){
+        return;
+    }
+
+
+    const confirmar =
+    confirm(
+        "Deseja excluir todos os itens do carrinho?"
+    );
+
+
+    if(!confirmar){
+        return;
+    }
+
+
+    carrinho = [];
+
+
+    atualizarCarrinho();
+
+}
+
+
+/* =========================
+   DESLIZAR ITEM PARA EXCLUIR
+========================= */
+
+function ativarSwipe(
+    itemDiv,
+    conteudo
+){
+
+    let inicioX = 0;
+    let inicioY = 0;
+    let movimentoX = 0;
+    let arrastando = false;
+
+
+    itemDiv.addEventListener(
+        "touchstart",
+        function(event){
+
+            if(event.touches.length !== 1){
+                return;
+            }
+
+
+            inicioX =
+            event.touches[0].clientX;
+
+            inicioY =
+            event.touches[0].clientY;
+
+            movimentoX = 0;
+
+            arrastando = false;
+
+            conteudo.style.transition =
+            "none";
+
+        },
+        {
+            passive:true
+        }
+    );
+
+
+    itemDiv.addEventListener(
+        "touchmove",
+        function(event){
+
+            if(
+                inicioX === 0 ||
+                event.touches.length !== 1
+            ){
+                return;
+            }
+
+
+            const atualX =
+            event.touches[0].clientX;
+
+            const atualY =
+            event.touches[0].clientY;
+
+
+            const diferencaX =
+            atualX - inicioX;
+
+            const diferencaY =
+            atualY - inicioY;
+
+
+            if(
+                Math.abs(diferencaY) >
+                Math.abs(diferencaX)
+            ){
+
+                return;
+
+            }
+
+
+            if(diferencaX < 0){
+
+                movimentoX =
+                Math.max(
+                    diferencaX,
+                    -82
+                );
+
+                arrastando = true;
+
+
+                conteudo.style.transform =
+                "translateX(" +
+                movimentoX +
+                "px)";
+
+
+                event.preventDefault();
+
+            }
+
+        },
+        {
+            passive:false
+        }
+    );
+
+
+    itemDiv.addEventListener(
+        "touchend",
+        function(){
+
+            if(!arrastando){
+                return;
+            }
+
+
+            conteudo.style.transition =
+            "transform .25s ease";
+
+
+            if(movimentoX <= -40){
+
+                conteudo.style.transform =
+                "translateX(-82px)";
+
+            }else{
+
+                conteudo.style.transform =
+                "translateX(0)";
+
+            }
+
+
+            inicioX = 0;
+            inicioY = 0;
+            movimentoX = 0;
+            arrastando = false;
+
+        }
+    );
+
+}
 
 
 /* =========================
    ATUALIZAR CARRINHO
 ========================= */
 
-function atualizarCarrinho() {
+function atualizarCarrinho(){
+
+    const area =
+    document.getElementById("itens");
+
+    const contador =
+    document.getElementById("contador");
+
+    const totalElemento =
+    document.getElementById("total");
 
 
-    const container =
-        document.getElementById(
-            "cartItems"
-        );
-
-
-    const counter =
-        document.getElementById(
-            "cartCounter"
-        );
-
-
-    const totalElement =
-        document.getElementById(
-            "cartTotal"
-        );
-
-
-    container.innerHTML = "";
+    area.innerHTML = "";
 
 
     let total = 0;
@@ -1466,947 +2279,638 @@ function atualizarCarrinho() {
     let quantidadeTotal = 0;
 
 
+    if(carrinho.length === 0){
+
+        area.innerHTML =
+        '<div style="text-align:center;color:#777;margin-top:40px;">Seu carrinho está vazio.</div>';
+
+    }
+
 
     carrinho.forEach(
-        (item, index) => {
+    function(item){
+
+        const produto =
+        produtos.find(
+            function(p){
+
+                return p.id === item.id;
+
+            }
+        );
 
 
-        total +=
-            item.preco *
-            item.quantidade;
+        if(!produto){
+            return;
+        }
 
+
+        const subtotal =
+        produto.preco *
+        item.quantidade;
+
+
+        total += subtotal;
 
         quantidadeTotal +=
-            item.quantidade;
+        item.quantidade;
 
 
+        const itemDiv =
+        document.createElement("div");
 
-        /* CONTAINER */
+        itemDiv.className =
+        "item";
 
-        const swipeContainer =
-            document.createElement(
-                "div"
+
+        /* CONTEÚDO DO ITEM */
+
+        const conteudo =
+        document.createElement("div");
+
+        conteudo.className =
+        "item-conteudo";
+
+
+        const itemProduto =
+        document.createElement("div");
+
+        itemProduto.className =
+        "item-produto";
+
+
+        /* FOTO */
+
+        if(produto.fotos.length > 0){
+
+            const imagem =
+            document.createElement("img");
+
+            imagem.src =
+            produto.fotos[0];
+
+            imagem.alt =
+            produto.nome;
+
+            itemProduto.appendChild(
+                imagem
             );
 
+        }else{
 
-        swipeContainer.className =
-            "swipe-container";
+            const imagemVazia =
+            document.createElement("div");
 
+            imagemVazia.style.width =
+            "75px";
 
+            imagemVazia.style.height =
+            "75px";
 
-        /* LIXEIRA */
+            imagemVazia.style.borderRadius =
+            "8px";
 
-        const lixeira =
-            document.createElement(
-                "div"
+            imagemVazia.style.background =
+            "#eee";
+
+            imagemVazia.style.flexShrink =
+            "0";
+
+            itemProduto.appendChild(
+                imagemVazia
             );
 
-
-        lixeira.className =
-            "lixeira";
+        }
 
 
-        lixeira.innerHTML =
-            "🗑";
+        const itemInfo =
+        document.createElement("div");
+
+        itemInfo.className =
+        "item-info";
 
 
+        itemInfo.innerHTML = `
 
-        /* ITEM */
+            <strong>
+                ${produto.nome}
+            </strong>
 
-        const div =
-            document.createElement(
-                "div"
-            );
+            <div class="item-tamanho">
 
+                Tamanho:
+                <strong>
+                    ${item.tamanho}
+                </strong>
 
-        div.className =
-            "cart-item swipe-item";
-
-
-
-        div.innerHTML = `
-
-            <h3>
-                ${item.nome}
-            </h3>
-
-            <p>
-                Tamanho: ${item.tamanho}
-            </p>
-
-            <p>
-                R$ ${item.preco
-                    .toFixed(2)
-                    .replace(".", ",")}
-            </p>
+            </div>
 
             <div class="quantidade">
 
                 <button
-                    data-index="${index}"
-                    data-action="menos">
+                type="button"
+                class="menos">
 
-                    -
+                -
 
                 </button>
-
 
                 <span>
                     ${item.quantidade}
                 </span>
 
-
                 <button
-                    data-index="${index}"
-                    data-action="mais">
+                type="button"
+                class="mais">
 
-                    +
+                +
 
                 </button>
+
+                <span>
+                    R$ ${dinheiro(subtotal)}
+                </span>
 
             </div>
 
         `;
 
 
-
-        /* BOTÕES + E - */
-
-        div.querySelectorAll(
-            "button"
-        ).forEach(button => {
+        itemProduto.appendChild(
+            itemInfo
+        );
 
 
-            button.addEventListener(
-                "click",
-                () => {
+        conteudo.appendChild(
+            itemProduto
+        );
 
 
-                    const i =
-                        Number(
-                            button.dataset.index
-                        );
+        /* BOTÃO DA LIXEIRA */
+
+        const excluirBtn =
+        document.createElement("button");
+
+        excluirBtn.className =
+        "item-excluir";
+
+        excluirBtn.type =
+        "button";
+
+        excluirBtn.setAttribute(
+            "aria-label",
+            "Excluir item"
+        );
 
 
-                    const action =
-                        button.dataset.action;
+        excluirBtn.innerHTML = `
+
+            <svg
+            class="icone-lixeira"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+
+                <path d="M6 7h12v13H6V7zm3-4h6l1 2h4v2H4V5h4l1-2zm1 7v7h2v-7h-2zm4 0v7h2v-7h-2z"/>
+
+            </svg>
+
+        `;
 
 
-
-                    if (
-                        action === "mais"
-                    ) {
-
-                        carrinho[i]
-                            .quantidade++;
-
-                    }
-
-
-
-                    if (
-                        action === "menos"
-                    ) {
-
-
-                        carrinho[i]
-                            .quantidade--;
-
-
-                        if (
-                            carrinho[i]
-                                .quantidade <= 0
-                        ) {
-
-                            carrinho.splice(
-                                i,
-                                1
-                            );
-
-                        }
-
-                    }
-
-
-                    atualizarCarrinho();
-
-                }
-            );
-
-        });
-
-
-
-        /* =========================
-           LIXEIRA
-        ========================= */
-
-        lixeira.addEventListener(
+        excluirBtn.addEventListener(
             "click",
-            () => {
+            function(){
+
+                excluirItem(
+                    item.id,
+                    item.tamanho
+                );
+
+            }
+        );
 
 
-                carrinho.splice(
-                    index,
+        itemDiv.appendChild(
+            conteudo
+        );
+
+        itemDiv.appendChild(
+            excluirBtn
+        );
+
+
+        /* BOTÃO MENOS */
+
+        itemInfo
+        .querySelector(".menos")
+        .addEventListener(
+            "click",
+            function(){
+
+                alterarQuantidade(
+                    item.id,
+                    item.tamanho,
+                    -1
+                );
+
+            }
+        );
+
+
+        /* BOTÃO MAIS */
+
+        itemInfo
+        .querySelector(".mais")
+        .addEventListener(
+            "click",
+            function(){
+
+                alterarQuantidade(
+                    item.id,
+                    item.tamanho,
                     1
                 );
 
-
-                atualizarCarrinho();
-
             }
         );
 
 
+        /* SWIPE */
 
-        /* =========================
-           ARRASTAR NO CELULAR
-        ========================= */
-
-        let inicioX = 0;
-
-        let movimentoX = 0;
-
-        let arrastando = false;
-
-
-
-        div.addEventListener(
-            "touchstart",
-            (e) => {
-
-
-                inicioX =
-                    e.touches[0]
-                        .clientX;
-
-
-                arrastando = true;
-
-
-                div.style.transition =
-                    "none";
-
-            }
+        ativarSwipe(
+            itemDiv,
+            conteudo
         );
 
 
-
-        div.addEventListener(
-            "touchmove",
-            (e) => {
-
-
-                if (!arrastando)
-                    return;
-
-
-                movimentoX =
-                    e.touches[0]
-                        .clientX -
-                    inicioX;
-
-
-
-                /* SÓ ESQUERDA */
-
-                if (
-                    movimentoX < 0
-                ) {
-
-
-                    const limite =
-                        Math.max(
-                            movimentoX,
-                            -80
-                        );
-
-
-                    div.style.transform =
-                        `translateX(${limite}px)`;
-
-                }
-
-            }
-        );
-
-
-
-        div.addEventListener(
-            "touchend",
-            () => {
-
-
-                arrastando = false;
-
-
-                div.style.transition =
-                    "transform 0.25s ease";
-
-
-
-                if (
-                    movimentoX < -40
-                ) {
-
-
-                    div.style.transform =
-                        "translateX(-80px)";
-
-
-                } else {
-
-
-                    div.style.transform =
-                        "translateX(0)";
-
-                }
-
-
-                inicioX = 0;
-
-                movimentoX = 0;
-
-            }
-        );
-
-
-
-        swipeContainer.appendChild(
-            lixeira
-        );
-
-
-        swipeContainer.appendChild(
-            div
-        );
-
-
-        container.appendChild(
-            swipeContainer
+        area.appendChild(
+            itemDiv
         );
 
     });
 
 
+    contador.textContent =
+    quantidadeTotal;
 
-    counter.textContent =
-        quantidadeTotal;
 
-
-    totalElement.textContent =
-        total
-            .toFixed(2)
-            .replace(".", ",");
+    totalElemento.textContent =
+    dinheiro(total);
 
 }
 
 
-
 /* =========================
-   MODAL
+   ALTERAR QUANTIDADE
 ========================= */
 
-let produtoModal = null;
-
-let fotoAtual = 0;
-
-
-
-function abrirModal(
+function alterarQuantidade(
     id,
-    index
-) {
-
-
-    const produto =
-        produtos.find(
-            p => p.id === id
-        );
-
-
-    if (
-        !produto ||
-        produto.fotos.length === 0
-    ) {
-
-        return;
-
-    }
-
-
-    produtoModal =
-        produto;
-
-
-    fotoAtual =
-        index;
-
-
-    atualizarImagemModal();
-
-
-    document.getElementById(
-        "modal"
-    ).style.display =
-        "flex";
-
-}
-
-
-
-function atualizarImagemModal() {
-
-
-    document.getElementById(
-        "imagemModal"
-    ).src =
-        produtoModal.fotos[
-            fotoAtual
-        ];
-
-}
-
-
-
-function fecharModal() {
-
-
-    document.getElementById(
-        "modal"
-    ).style.display =
-        "none";
-
-}
-
-
-
-function fotoAnterior() {
-
-
-    if (!produtoModal)
-        return;
-
-
-    fotoAtual--;
-
-
-    if (
-        fotoAtual < 0
-    ) {
-
-        fotoAtual =
-            produtoModal.fotos.length - 1;
-
-    }
-
-
-    atualizarImagemModal();
-
-}
-
-
-
-function proximaFoto() {
-
-
-    if (!produtoModal)
-        return;
-
-
-    fotoAtual++;
-
-
-    if (
-        fotoAtual >=
-        produtoModal.fotos.length
-    ) {
-
-        fotoAtual = 0;
-
-    }
-
-
-    atualizarImagemModal();
-
-}
-
-
-
-/* =========================
-   NAVEGAÇÃO
-========================= */
-
-document.getElementById(
-    "verCamisas"
-).addEventListener(
-    "click",
-    () => {
-
-
-        document.getElementById(
-            "inicio"
-        ).style.display =
-            "none";
-
-
-        document.getElementById(
-            "catalogo"
-        ).style.display =
-            "block";
-
-
-        window.scrollTo(
-            0,
-            0
-        );
-
-    }
-);
-
-
-
-document.getElementById(
-    "voltarInicio"
-).addEventListener(
-    "click",
-    () => {
-
-
-        document.getElementById(
-            "catalogo"
-        ).style.display =
-            "none";
-
-
-        document.getElementById(
-            "inicio"
-        ).style.display =
-            "block";
-
-
-        window.scrollTo(
-            0,
-            0
-        );
-
-    }
-);
-
-
-
-/* =========================
-   WHATSAPP DÚVIDAS
-========================= */
-
-document.getElementById(
-    "whatsappDuvidas"
-).addEventListener(
-    "click",
-    () => {
-
-
-        const mensagem =
-            "Olá! Vim pelo site da MC SPORTS e gostaria de tirar uma dúvida.";
-
-
-        const url =
-            "https://wa.me/" +
-            WHATSAPP +
-            "?text=" +
-            encodeURIComponent(
-                mensagem
+    tamanho,
+    valor
+){
+
+    const item =
+    carrinho.find(
+        function(i){
+
+            return (
+                i.id === id &&
+                i.tamanho === tamanho
             );
-
-
-        window.open(
-            url,
-            "_blank"
-        );
-
-    }
-);
-
-
-
-/* =========================
-   ABRIR CARRINHO
-========================= */
-
-document.getElementById(
-    "abrirCarrinho"
-).addEventListener(
-    "click",
-    () => {
-
-
-        document.getElementById(
-            "cartPanel"
-        ).style.display =
-            "block";
-
-    }
-);
-
-
-
-/* =========================
-   FECHAR CARRINHO
-========================= */
-
-document.getElementById(
-    "fecharCarrinho"
-).addEventListener(
-    "click",
-    () => {
-
-
-        document.getElementById(
-            "cartPanel"
-        ).style.display =
-            "none";
-
-    }
-);
-
-
-
-/* =========================
-   EXCLUIR TUDO
-========================= */
-
-document.getElementById(
-    "excluirTudo"
-).addEventListener(
-    "click",
-    () => {
-
-
-        if (
-            carrinho.length === 0
-        ) {
-
-
-            alert(
-                "O carrinho já está vazio."
-            );
-
-
-            return;
 
         }
+    );
 
 
-
-        const confirmar =
-            confirm(
-                "Tem certeza que deseja excluir todos os itens do carrinho?"
-            );
+    if(!item){
+        return;
+    }
 
 
-
-        if (!confirmar) {
-
-            return;
-
-        }
+    item.quantidade +=
+    valor;
 
 
+    if(item.quantidade <= 0){
 
-        carrinho = [];
+        carrinho =
+        carrinho.filter(
+            function(i){
 
+                return !(
+                    i.id === id &&
+                    i.tamanho === tamanho
+                );
 
-        atualizarCarrinho();
+            }
+        );
 
     }
-);
 
+
+    atualizarCarrinho();
+
+}
+
+
+/* =========================
+   ABRIR / FECHAR CARRINHO
+========================= */
+
+function abrirCarrinho(){
+
+    document
+    .getElementById("carrinho")
+    .classList
+    .add("aberto");
+
+}
+
+
+function fecharCarrinho(){
+
+    document
+    .getElementById("carrinho")
+    .classList
+    .remove("aberto");
+
+}
 
 
 /* =========================
    FINALIZAR PEDIDO
 ========================= */
 
-document.getElementById(
-    "finalizarWhatsApp"
-).addEventListener(
-    "click",
-    () => {
+function finalizarPedido(){
 
+    if(carrinho.length === 0){
 
-        if (
-            carrinho.length === 0
-        ) {
-
-
-            alert(
-                "Seu carrinho está vazio."
-            );
-
-
-            return;
-
-        }
-
-
-
-        const nome =
-            document.getElementById(
-                "nome"
-            ).value.trim();
-
-
-
-        const bairro =
-            document.getElementById(
-                "bairro"
-            ).value.trim();
-
-
-
-        const rua =
-            document.getElementById(
-                "rua"
-            ).value.trim();
-
-
-
-        const numero =
-            document.getElementById(
-                "numero"
-            ).value.trim();
-
-
-
-        if (
-            !nome ||
-            !bairro ||
-            !rua ||
-            !numero
-        ) {
-
-
-            alert(
-                "Preencha todos os dados de entrega."
-            );
-
-
-            return;
-
-        }
-
-
-
-        let mensagem =
-            "Olá! Gostaria de fazer um pedido na MC SPORTS.\n\n";
-
-
-
-        carrinho.forEach(
-            item => {
-
-
-            mensagem +=
-
-                item.nome +
-
-                " | Tamanho: " +
-
-                item.tamanho +
-
-                " | Quantidade: " +
-
-                item.quantidade +
-
-                " | R$ " +
-
-                (
-                    item.preco *
-                    item.quantidade
-                )
-                .toFixed(2)
-                .replace(".", ",") +
-
-                "\n";
-
-        });
-
-
-
-        const total =
-            carrinho.reduce(
-                (soma, item) =>
-                    soma +
-                    item.preco *
-                    item.quantidade,
-
-                0
-            );
-
-
-
-        mensagem +=
-
-            "\nTotal: R$ " +
-
-            total
-                .toFixed(2)
-                .replace(".", ",");
-
-
-
-        mensagem +=
-
-            "\n\nDados de entrega:" +
-
-            "\nNome: " +
-            nome +
-
-            "\nBairro: " +
-            bairro +
-
-            "\nRua: " +
-            rua +
-
-            "\nNúmero da casa: " +
-            numero;
-
-
-
-        const url =
-
-            "https://wa.me/" +
-
-            WHATSAPP +
-
-            "?text=" +
-
-            encodeURIComponent(
-                mensagem
-            );
-
-
-
-        window.open(
-            url,
-            "_blank"
+        alert(
+            "Seu carrinho está vazio."
         );
 
-    }
-);
+        return;
 
+    }
+
+
+    let mensagem =
+    "MC SPORTS - NOVO PEDIDO\n\n";
+
+
+    mensagem +=
+    "DADOS DE ENTREGA\n";
+
+    mensagem +=
+    "Nome:\n";
+
+    mensagem +=
+    "Bairro:\n";
+
+    mensagem +=
+    "Rua:\n";
+
+    mensagem +=
+    "Número da casa:\n\n";
+
+
+    mensagem +=
+    "PEDIDO\n";
+
+
+    let total = 0;
+
+
+    carrinho.forEach(
+    function(item){
+
+        const produto =
+        produtos.find(
+            function(p){
+
+                return p.id === item.id;
+
+            }
+        );
+
+
+        const subtotal =
+        produto.preco *
+        item.quantidade;
+
+
+        total += subtotal;
+
+
+        mensagem +=
+        item.quantidade +
+        "x " +
+        produto.nome +
+        "\n";
+
+
+        mensagem +=
+        "Tamanho: " +
+        item.tamanho +
+        "\n";
+
+
+        mensagem +=
+        "Subtotal: R$ " +
+        dinheiro(subtotal) +
+        "\n\n";
+
+    });
+
+
+    mensagem +=
+    "TOTAL: R$ " +
+    dinheiro(total);
+
+
+    const url =
+    "https://wa.me/" +
+    numeroWhatsApp +
+    "?text=" +
+    encodeURIComponent(
+        mensagem
+    );
+
+
+    window.location.href =
+    url;
+
+}
 
 
 /* =========================
-   CONTROLES DO MODAL
+   BOTÕES
 ========================= */
 
-document.getElementById(
-    "fecharModal"
-).addEventListener(
+document
+.getElementById("botaoCamisas")
+.addEventListener(
     "click",
-    fecharModal
+    abrirProdutos
 );
 
 
+document
+.getElementById("botaoAjuda")
+.addEventListener(
+    "click",
+    abrirWhatsApp
+);
 
-document.getElementById(
-    "fotoAnterior"
-).addEventListener(
+
+document
+.getElementById("botaoCarrinho")
+.addEventListener(
+    "click",
+    abrirCarrinho
+);
+
+
+document
+.getElementById("botaoVoltar")
+.addEventListener(
+    "click",
+    voltarInicio
+);
+
+
+document
+.getElementById("botaoFecharCarrinho")
+.addEventListener(
+    "click",
+    fecharCarrinho
+);
+
+
+document
+.getElementById("botaoContinuar")
+.addEventListener(
+    "click",
+    fecharCarrinho
+);
+
+
+document
+.getElementById("botaoFinalizar")
+.addEventListener(
+    "click",
+    finalizarPedido
+);
+
+
+/* EXCLUIR TUDO */
+
+document
+.getElementById("botaoExcluirTudo")
+.addEventListener(
+    "click",
+    excluirTudo
+);
+
+
+/* BOTÕES DO VISUALIZADOR */
+
+document
+.getElementById("fecharFoto")
+.addEventListener(
+    "click",
+    fecharFoto
+);
+
+
+document
+.getElementById("fotoAnterior")
+.addEventListener(
     "click",
     fotoAnterior
 );
 
 
-
-document.getElementById(
-    "proximaFoto"
-).addEventListener(
+document
+.getElementById("proximaFoto")
+.addEventListener(
     "click",
     proximaFoto
 );
 
 
+/* CLICAR FORA DA FOTO FECHA */
 
-/* CLICAR FORA DA FOTO */
-
-document.getElementById(
-    "modal"
-).addEventListener(
+document
+.getElementById("visualizador")
+.addEventListener(
     "click",
-    (e) => {
+    function(event){
 
+        if(
+            event.target ===
+            document.getElementById(
+                "visualizador"
+            )
+        ){
 
-        if (
-            e.target.id ===
-            "modal"
-        ) {
-
-            fecharModal();
+            fecharFoto();
 
         }
 
     }
 );
-
 
 
 /* TECLADO */
 
 document.addEventListener(
-    "keydown",
-    (e) => {
+"keydown",
+function(event){
+
+    const visualizador =
+    document.getElementById(
+        "visualizador"
+    );
 
 
-        const modal =
-            document.getElementById(
-                "modal"
-            );
+    if(
+        !visualizador.classList.contains(
+            "aberto"
+        )
+    ){
 
-
-        if (
-            modal.style.display !==
-            "flex"
-        ) {
-
-            return;
-
-        }
-
-
-        if (
-            e.key === "Escape"
-        ) {
-
-            fecharModal();
-
-        }
-
-
-        if (
-            e.key === "ArrowLeft"
-        ) {
-
-            fotoAnterior();
-
-        }
-
-
-        if (
-            e.key === "ArrowRight"
-        ) {
-
-            proximaFoto();
-
-        }
+        return;
 
     }
-);
 
+
+    if(event.key === "Escape"){
+
+        fecharFoto();
+
+    }
+
+
+    if(event.key === "ArrowLeft"){
+
+        fotoAnterior();
+
+    }
+
+
+    if(event.key === "ArrowRight"){
+
+        proximaFoto();
+
+    }
+
+});
 
 
 /* =========================
-   INICIAR SITE
+   INICIAR
 ========================= */
 
 mostrarProdutos();
