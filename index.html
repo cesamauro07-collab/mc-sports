@@ -569,68 +569,9 @@ header{
     cursor:pointer;
 }
 
-/* =========================
-   EXCLUIR TUDO
-========================= */
-
-.excluir-tudo{
-    width:100%;
-    margin-top:15px;
-    padding:11px;
-    border:1px solid #ddd;
-    border-radius:9px;
-    background:white;
-    color:#c40000;
-    font-size:14px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.excluir-tudo:hover{
-    background:#fff4f4;
-}
-
-/* =========================
-   ITENS DO CARRINHO
-========================= */
-
 .item{
-    position:relative;
-    overflow:hidden;
     padding:16px 0;
     border-bottom:1px solid #eee;
-}
-
-.item-conteudo{
-    position:relative;
-    z-index:2;
-    background:white;
-    transform:translateX(0);
-    transition:transform .25s ease;
-}
-
-.item-excluir{
-    position:absolute;
-    top:0;
-    right:0;
-    width:82px;
-    height:100%;
-    border:0;
-    background:#d00000;
-    color:white;
-    cursor:pointer;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    z-index:1;
-}
-
-.icone-lixeira{
-    width:27px;
-    height:27px;
-    fill:white;
 }
 
 .item-produto{
@@ -870,7 +811,6 @@ id="contador">
 
 </header>
 
-
 <!-- =========================
      INÍCIO
 ========================= -->
@@ -940,7 +880,6 @@ WhatsApp — Dúvidas
 
 </section>
 
-
 <!-- =========================
      PRODUTOS
 ========================= -->
@@ -981,7 +920,6 @@ id="produtos">
 </div>
 
 </section>
-
 
 <!-- =========================
      VISUALIZADOR
@@ -1029,7 +967,6 @@ type="button">
 
 </div>
 
-
 <!-- =========================
      CARRINHO
 ========================= -->
@@ -1050,15 +987,6 @@ Fechar
 <h2>
 Seu carrinho
 </h2>
-
-<button
-id="botaoExcluirTudo"
-class="excluir-tudo"
-type="button">
-
-Excluir tudo
-
-</button>
 
 <div id="itens"></div>
 
@@ -1092,13 +1020,11 @@ Continuar comprando
 
 </div>
 
-
 <footer>
 
 MC Sports — A loja do seu time
 
 </footer>
-
 
 <script>
 
@@ -1108,7 +1034,6 @@ MC Sports — A loja do seu time
 
 const numeroWhatsApp =
 "5592994486162";
-
 
 /* =========================
    PRODUTOS
@@ -1194,108 +1119,15 @@ const produtos = [
         "https://raw.githubusercontent.com/cesamauro07-collab/mc-sports/main/IMG_7171.jpeg"
 
     ]
-},
-
-{
-    id:5,
-
-    time:"Vasco",
-
-    nome:
-    "Camisa Vasco 2026 — Visitante",
-
-    preco:60,
-
-    fotos:[]
-},
-
-{
-    id:6,
-
-    time:"Barcelona",
-
-    nome:
-    "Camisa Barcelona 26/27 — Principal",
-
-    preco:60,
-
-    fotos:[]
-},
-
-{
-    id:7,
-
-    time:"Corinthians",
-
-    nome:
-    "Camisa Corinthians 2026 — Visitante",
-
-    preco:60,
-
-    fotos:[]
-},
-
-{
-    id:8,
-
-    time:"Manchester United",
-
-    nome:
-    "Camisa United 26/27 — Principal",
-
-    preco:60,
-
-    fotos:[]
-},
-
-{
-    id:9,
-
-    time:"Real Madrid",
-
-    nome:
-    "Camisa Real Madrid 26/27 — Principal",
-
-    preco:60,
-
-    fotos:[]
-},
-
-{
-    id:10,
-
-    time:"São Paulo",
-
-    nome:
-    "Camisa São Paulo 2026 — Principal",
-
-    preco:60,
-
-    fotos:[]
-},
-
-{
-    id:11,
-
-    time:"Chelsea",
-
-    nome:
-    "Camisa Chelsea 26/27 — Visitante",
-
-    preco:60,
-
-    fotos:[]
 }
 
 ];
-
 
 /* =========================
    CARRINHO
 ========================= */
 
 let carrinho = [];
-
 
 /* =========================
    CONTROLE DA FOTO AMPLIADA
@@ -1304,7 +1136,6 @@ let carrinho = [];
 let fotosVisualizador = [];
 
 let indiceFotoVisualizador = 0;
-
 
 /* =========================
    DINHEIRO
@@ -1321,7 +1152,6 @@ function dinheiro(valor){
     );
 
 }
-
 
 /* =========================
    NAVEGAÇÃO
@@ -1346,7 +1176,6 @@ function abrirProdutos(){
 
 }
 
-
 function voltarInicio(){
 
     document
@@ -1365,7 +1194,6 @@ function voltarInicio(){
     });
 
 }
-
 
 /* =========================
    WHATSAPP
@@ -1387,7 +1215,6 @@ function abrirWhatsApp(){
 
 }
 
-
 /* =========================
    MOSTRAR PRODUTOS
 ========================= */
@@ -1399,7 +1226,6 @@ function mostrarProdutos(){
 
     area.innerHTML = "";
 
-
     produtos.forEach(
     function(produto){
 
@@ -1409,7 +1235,6 @@ function mostrarProdutos(){
         card.className =
         "produto";
 
-
         /* GALERIA */
 
         const galeria =
@@ -1417,7 +1242,6 @@ function mostrarProdutos(){
 
         galeria.className =
         "galeria";
-
 
         produto.fotos.forEach(
         function(foto,index){
@@ -1439,7 +1263,6 @@ function mostrarProdutos(){
 
             }
 
-
             /* AO CLICAR NA FOTO,
                ABRE A FOTO GRANDE */
 
@@ -1456,13 +1279,11 @@ function mostrarProdutos(){
                 }
             );
 
-
             galeria.appendChild(
                 imagem
             );
 
         });
-
 
         /* SETAS DA GALERIA */
 
@@ -1480,7 +1301,6 @@ function mostrarProdutos(){
             esquerda.innerHTML =
             "‹";
 
-
             esquerda.addEventListener(
                 "click",
                 function(event){
@@ -1495,7 +1315,6 @@ function mostrarProdutos(){
                 }
             );
 
-
             const direita =
             document.createElement("button");
 
@@ -1507,7 +1326,6 @@ function mostrarProdutos(){
 
             direita.innerHTML =
             "›";
-
 
             direita.addEventListener(
                 "click",
@@ -1523,7 +1341,6 @@ function mostrarProdutos(){
                 }
             );
 
-
             galeria.appendChild(
                 esquerda
             );
@@ -1534,7 +1351,6 @@ function mostrarProdutos(){
 
         }
 
-
         /* INFORMAÇÕES */
 
         const info =
@@ -1543,13 +1359,11 @@ function mostrarProdutos(){
         info.className =
         "info";
 
-
         const titulo =
         document.createElement("h2");
 
         titulo.textContent =
         produto.nome;
-
 
         const label =
         document.createElement("label");
@@ -1559,7 +1373,6 @@ function mostrarProdutos(){
 
         label.textContent =
         "Escolha o tamanho:";
-
 
         const seletor =
         document.createElement("select");
@@ -1574,7 +1387,6 @@ function mostrarProdutos(){
             <option value="GG">GG</option>
         `;
 
-
         const preco =
         document.createElement("div");
 
@@ -1584,7 +1396,6 @@ function mostrarProdutos(){
         preco.textContent =
         "R$ " +
         dinheiro(produto.preco);
-
 
         const adicionarBtn =
         document.createElement("button");
@@ -1597,7 +1408,6 @@ function mostrarProdutos(){
 
         adicionarBtn.textContent =
         "Adicionar ao carrinho";
-
 
         adicionarBtn.addEventListener(
             "click",
@@ -1612,24 +1422,20 @@ function mostrarProdutos(){
             }
         );
 
-
         info.appendChild(titulo);
         info.appendChild(label);
         info.appendChild(seletor);
         info.appendChild(preco);
         info.appendChild(adicionarBtn);
 
-
         card.appendChild(galeria);
         card.appendChild(info);
-
 
         area.appendChild(card);
 
     });
 
 }
-
 
 /* =========================
    TROCAR FOTO NA GALERIA
@@ -1643,14 +1449,11 @@ function mudarFoto(
     const fotos =
     galeria.querySelectorAll("img");
 
-
     if(fotos.length <= 1){
         return;
     }
 
-
     let atual = 0;
-
 
     fotos.forEach(
     function(foto,index){
@@ -1665,15 +1468,12 @@ function mudarFoto(
 
     });
 
-
     fotos[atual]
     .classList
     .remove("ativa");
 
-
     let nova =
     atual + direcao;
-
 
     if(nova < 0){
 
@@ -1682,20 +1482,17 @@ function mudarFoto(
 
     }
 
-
     if(nova >= fotos.length){
 
         nova = 0;
 
     }
 
-
     fotos[nova]
     .classList
     .add("ativa");
 
 }
-
 
 /* =========================
    ABRIR FOTO AMPLIADA
@@ -1707,33 +1504,25 @@ function abrirVisualizador(
     nome
 ){
 
-    if(fotos.length === 0){
-        return;
-    }
-
     fotosVisualizador =
     fotos.slice();
 
     indiceFotoVisualizador =
     indice;
 
-
     atualizarFotoAmpliada(
         nome
     );
-
 
     document
     .getElementById("visualizador")
     .classList
     .add("aberto");
 
-
     document.body.style.overflow =
     "hidden";
 
 }
-
 
 /* =========================
    ATUALIZAR FOTO AMPLIADA
@@ -1748,18 +1537,15 @@ function atualizarFotoAmpliada(
         "fotoAmpliada"
     );
 
-
     imagem.src =
     fotosVisualizador[
         indiceFotoVisualizador
     ];
 
-
     imagem.alt =
     nome;
 
 }
-
 
 /* =========================
    FOTO ANTERIOR
@@ -1773,9 +1559,7 @@ function fotoAnterior(){
         return;
     }
 
-
     indiceFotoVisualizador--;
-
 
     if(
         indiceFotoVisualizador < 0
@@ -1786,7 +1570,6 @@ function fotoAnterior(){
 
     }
 
-
     atualizarFotoAmpliada(
         document.getElementById(
             "fotoAmpliada"
@@ -1794,7 +1577,6 @@ function fotoAnterior(){
     );
 
 }
-
 
 /* =========================
    PRÓXIMA FOTO
@@ -1808,9 +1590,7 @@ function proximaFoto(){
         return;
     }
 
-
     indiceFotoVisualizador++;
-
 
     if(
         indiceFotoVisualizador >=
@@ -1821,7 +1601,6 @@ function proximaFoto(){
 
     }
 
-
     atualizarFotoAmpliada(
         document.getElementById(
             "fotoAmpliada"
@@ -1829,7 +1608,6 @@ function proximaFoto(){
     );
 
 }
-
 
 /* =========================
    FECHAR FOTO
@@ -1842,12 +1620,10 @@ function fecharFoto(){
     .classList
     .remove("aberto");
 
-
     document.body.style.overflow =
     "";
 
 }
-
 
 /* =========================
    CARRINHO
@@ -1868,11 +1644,9 @@ function adicionar(
         }
     );
 
-
     if(!produto){
         return;
     }
-
 
     const existente =
     carrinho.find(
@@ -1885,7 +1659,6 @@ function adicionar(
 
         }
     );
-
 
     if(existente){
 
@@ -1903,9 +1676,7 @@ function adicionar(
 
     }
 
-
     atualizarCarrinho();
-
 
     /* ANIMAÇÃO */
 
@@ -1914,12 +1685,10 @@ function adicionar(
         "img.ativa"
     );
 
-
     const carrinhoBtn =
     document.getElementById(
         "botaoCarrinho"
     );
-
 
     if(imagem){
 
@@ -1931,7 +1700,6 @@ function adicionar(
 
         const destino =
         carrinhoBtn.getBoundingClientRect();
-
 
         clone.style.position =
         "fixed";
@@ -1963,11 +1731,9 @@ function adicionar(
         clone.style.transition =
         "all .6s ease";
 
-
         document.body.appendChild(
             clone
         );
-
 
         requestAnimationFrame(
         function(){
@@ -1979,14 +1745,12 @@ function adicionar(
                 20
             ) + "px";
 
-
             clone.style.top =
             (
                 destino.top +
                 destino.height / 2 -
                 20
             ) + "px";
-
 
             clone.style.width =
             "30px";
@@ -1999,7 +1763,6 @@ function adicionar(
 
         });
 
-
         setTimeout(
         function(){
 
@@ -2009,7 +1772,6 @@ function adicionar(
 
     }
 
-
     mostrarConfirmacao(
         produto.time +
         " — tamanho " +
@@ -2018,7 +1780,6 @@ function adicionar(
     );
 
 }
-
 
 /* =========================
    CONFIRMAÇÃO
@@ -2037,11 +1798,9 @@ function mostrarConfirmacao(
     aviso.textContent =
     texto;
 
-
     document.body.appendChild(
         aviso
     );
-
 
     setTimeout(
     function(){
@@ -2051,209 +1810,6 @@ function mostrarConfirmacao(
     },1500);
 
 }
-
-
-/* =========================
-   EXCLUIR ITEM
-========================= */
-
-function excluirItem(
-    id,
-    tamanho
-){
-
-    carrinho =
-    carrinho.filter(
-        function(item){
-
-            return !(
-                item.id === id &&
-                item.tamanho === tamanho
-            );
-
-        }
-    );
-
-
-    atualizarCarrinho();
-
-}
-
-
-/* =========================
-   EXCLUIR TUDO
-========================= */
-
-function excluirTudo(){
-
-    if(carrinho.length === 0){
-        return;
-    }
-
-
-    const confirmar =
-    confirm(
-        "Deseja excluir todos os itens do carrinho?"
-    );
-
-
-    if(!confirmar){
-        return;
-    }
-
-
-    carrinho = [];
-
-
-    atualizarCarrinho();
-
-}
-
-
-/* =========================
-   DESLIZAR ITEM PARA EXCLUIR
-========================= */
-
-function ativarSwipe(
-    itemDiv,
-    conteudo
-){
-
-    let inicioX = 0;
-    let inicioY = 0;
-    let movimentoX = 0;
-    let arrastando = false;
-
-
-    itemDiv.addEventListener(
-        "touchstart",
-        function(event){
-
-            if(event.touches.length !== 1){
-                return;
-            }
-
-
-            inicioX =
-            event.touches[0].clientX;
-
-            inicioY =
-            event.touches[0].clientY;
-
-            movimentoX = 0;
-
-            arrastando = false;
-
-            conteudo.style.transition =
-            "none";
-
-        },
-        {
-            passive:true
-        }
-    );
-
-
-    itemDiv.addEventListener(
-        "touchmove",
-        function(event){
-
-            if(
-                inicioX === 0 ||
-                event.touches.length !== 1
-            ){
-                return;
-            }
-
-
-            const atualX =
-            event.touches[0].clientX;
-
-            const atualY =
-            event.touches[0].clientY;
-
-
-            const diferencaX =
-            atualX - inicioX;
-
-            const diferencaY =
-            atualY - inicioY;
-
-
-            if(
-                Math.abs(diferencaY) >
-                Math.abs(diferencaX)
-            ){
-
-                return;
-
-            }
-
-
-            if(diferencaX < 0){
-
-                movimentoX =
-                Math.max(
-                    diferencaX,
-                    -82
-                );
-
-                arrastando = true;
-
-
-                conteudo.style.transform =
-                "translateX(" +
-                movimentoX +
-                "px)";
-
-
-                event.preventDefault();
-
-            }
-
-        },
-        {
-            passive:false
-        }
-    );
-
-
-    itemDiv.addEventListener(
-        "touchend",
-        function(){
-
-            if(!arrastando){
-                return;
-            }
-
-
-            conteudo.style.transition =
-            "transform .25s ease";
-
-
-            if(movimentoX <= -40){
-
-                conteudo.style.transform =
-                "translateX(-82px)";
-
-            }else{
-
-                conteudo.style.transform =
-                "translateX(0)";
-
-            }
-
-
-            inicioX = 0;
-            inicioY = 0;
-            movimentoX = 0;
-            arrastando = false;
-
-        }
-    );
-
-}
-
 
 /* =========================
    ATUALIZAR CARRINHO
@@ -2270,14 +1826,11 @@ function atualizarCarrinho(){
     const totalElemento =
     document.getElementById("total");
 
-
     area.innerHTML = "";
-
 
     let total = 0;
 
     let quantidadeTotal = 0;
-
 
     if(carrinho.length === 0){
 
@@ -2285,7 +1838,6 @@ function atualizarCarrinho(){
         '<div style="text-align:center;color:#777;margin-top:40px;">Seu carrinho está vazio.</div>';
 
     }
-
 
     carrinho.forEach(
     function(item){
@@ -2299,22 +1851,18 @@ function atualizarCarrinho(){
             }
         );
 
-
         if(!produto){
             return;
         }
-
 
         const subtotal =
         produto.preco *
         item.quantidade;
 
-
         total += subtotal;
 
         quantidadeTotal +=
         item.quantidade;
-
 
         const itemDiv =
         document.createElement("div");
@@ -2322,186 +1870,65 @@ function atualizarCarrinho(){
         itemDiv.className =
         "item";
 
+        itemDiv.innerHTML = `
 
-        /* CONTEÚDO DO ITEM */
+            <div class="item-produto">
 
-        const conteudo =
-        document.createElement("div");
+                <img
+                src="${produto.fotos[0]}"
+                alt="${produto.nome}"
+                >
 
-        conteudo.className =
-        "item-conteudo";
+                <div class="item-info">
 
+                    <strong>
+                        ${produto.nome}
+                    </strong>
 
-        const itemProduto =
-        document.createElement("div");
+                    <div class="item-tamanho">
 
-        itemProduto.className =
-        "item-produto";
+                        Tamanho:
+                        <strong>
+                            ${item.tamanho}
+                        </strong>
 
+                    </div>
 
-        /* FOTO */
+                    <div class="quantidade">
 
-        if(produto.fotos.length > 0){
+                        <button
+                        type="button"
+                        class="menos">
 
-            const imagem =
-            document.createElement("img");
+                        -
 
-            imagem.src =
-            produto.fotos[0];
+                        </button>
 
-            imagem.alt =
-            produto.nome;
+                        <span>
+                            ${item.quantidade}
+                        </span>
 
-            itemProduto.appendChild(
-                imagem
-            );
+                        <button
+                        type="button"
+                        class="mais">
 
-        }else{
+                        +
 
-            const imagemVazia =
-            document.createElement("div");
+                        </button>
 
-            imagemVazia.style.width =
-            "75px";
+                        <span>
+                            R$ ${dinheiro(subtotal)}
+                        </span>
 
-            imagemVazia.style.height =
-            "75px";
+                    </div>
 
-            imagemVazia.style.borderRadius =
-            "8px";
-
-            imagemVazia.style.background =
-            "#eee";
-
-            imagemVazia.style.flexShrink =
-            "0";
-
-            itemProduto.appendChild(
-                imagemVazia
-            );
-
-        }
-
-
-        const itemInfo =
-        document.createElement("div");
-
-        itemInfo.className =
-        "item-info";
-
-
-        itemInfo.innerHTML = `
-
-            <strong>
-                ${produto.nome}
-            </strong>
-
-            <div class="item-tamanho">
-
-                Tamanho:
-                <strong>
-                    ${item.tamanho}
-                </strong>
-
-            </div>
-
-            <div class="quantidade">
-
-                <button
-                type="button"
-                class="menos">
-
-                -
-
-                </button>
-
-                <span>
-                    ${item.quantidade}
-                </span>
-
-                <button
-                type="button"
-                class="mais">
-
-                +
-
-                </button>
-
-                <span>
-                    R$ ${dinheiro(subtotal)}
-                </span>
+                </div>
 
             </div>
 
         `;
 
-
-        itemProduto.appendChild(
-            itemInfo
-        );
-
-
-        conteudo.appendChild(
-            itemProduto
-        );
-
-
-        /* BOTÃO DA LIXEIRA */
-
-        const excluirBtn =
-        document.createElement("button");
-
-        excluirBtn.className =
-        "item-excluir";
-
-        excluirBtn.type =
-        "button";
-
-        excluirBtn.setAttribute(
-            "aria-label",
-            "Excluir item"
-        );
-
-
-        excluirBtn.innerHTML = `
-
-            <svg
-            class="icone-lixeira"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-
-                <path d="M6 7h12v13H6V7zm3-4h6l1 2h4v2H4V5h4l1-2zm1 7v7h2v-7h-2zm4 0v7h2v-7h-2z"/>
-
-            </svg>
-
-        `;
-
-
-        excluirBtn.addEventListener(
-            "click",
-            function(){
-
-                excluirItem(
-                    item.id,
-                    item.tamanho
-                );
-
-            }
-        );
-
-
-        itemDiv.appendChild(
-            conteudo
-        );
-
-        itemDiv.appendChild(
-            excluirBtn
-        );
-
-
-        /* BOTÃO MENOS */
-
-        itemInfo
+        itemDiv
         .querySelector(".menos")
         .addEventListener(
             "click",
@@ -2516,10 +1943,7 @@ function atualizarCarrinho(){
             }
         );
 
-
-        /* BOTÃO MAIS */
-
-        itemInfo
+        itemDiv
         .querySelector(".mais")
         .addEventListener(
             "click",
@@ -2534,31 +1958,19 @@ function atualizarCarrinho(){
             }
         );
 
-
-        /* SWIPE */
-
-        ativarSwipe(
-            itemDiv,
-            conteudo
-        );
-
-
         area.appendChild(
             itemDiv
         );
 
     });
 
-
     contador.textContent =
     quantidadeTotal;
-
 
     totalElemento.textContent =
     dinheiro(total);
 
 }
-
 
 /* =========================
    ALTERAR QUANTIDADE
@@ -2582,15 +1994,12 @@ function alterarQuantidade(
         }
     );
 
-
     if(!item){
         return;
     }
 
-
     item.quantidade +=
     valor;
-
 
     if(item.quantidade <= 0){
 
@@ -2608,11 +2017,9 @@ function alterarQuantidade(
 
     }
 
-
     atualizarCarrinho();
 
 }
-
 
 /* =========================
    ABRIR / FECHAR CARRINHO
@@ -2627,7 +2034,6 @@ function abrirCarrinho(){
 
 }
 
-
 function fecharCarrinho(){
 
     document
@@ -2636,7 +2042,6 @@ function fecharCarrinho(){
     .remove("aberto");
 
 }
-
 
 /* =========================
    FINALIZAR PEDIDO
@@ -2654,10 +2059,8 @@ function finalizarPedido(){
 
     }
 
-
     let mensagem =
     "MC SPORTS - NOVO PEDIDO\n\n";
-
 
     mensagem +=
     "DADOS DE ENTREGA\n";
@@ -2674,13 +2077,10 @@ function finalizarPedido(){
     mensagem +=
     "Número da casa:\n\n";
 
-
     mensagem +=
     "PEDIDO\n";
 
-
     let total = 0;
-
 
     carrinho.forEach(
     function(item){
@@ -2694,14 +2094,11 @@ function finalizarPedido(){
             }
         );
 
-
         const subtotal =
         produto.preco *
         item.quantidade;
 
-
         total += subtotal;
-
 
         mensagem +=
         item.quantidade +
@@ -2709,12 +2106,10 @@ function finalizarPedido(){
         produto.nome +
         "\n";
 
-
         mensagem +=
         "Tamanho: " +
         item.tamanho +
         "\n";
-
 
         mensagem +=
         "Subtotal: R$ " +
@@ -2723,11 +2118,9 @@ function finalizarPedido(){
 
     });
 
-
     mensagem +=
     "TOTAL: R$ " +
     dinheiro(total);
-
 
     const url =
     "https://wa.me/" +
@@ -2737,12 +2130,10 @@ function finalizarPedido(){
         mensagem
     );
 
-
     window.location.href =
     url;
 
 }
-
 
 /* =========================
    BOTÕES
@@ -2755,14 +2146,12 @@ document
     abrirProdutos
 );
 
-
 document
 .getElementById("botaoAjuda")
 .addEventListener(
     "click",
     abrirWhatsApp
 );
-
 
 document
 .getElementById("botaoCarrinho")
@@ -2771,14 +2160,12 @@ document
     abrirCarrinho
 );
 
-
 document
 .getElementById("botaoVoltar")
 .addEventListener(
     "click",
     voltarInicio
 );
-
 
 document
 .getElementById("botaoFecharCarrinho")
@@ -2787,7 +2174,6 @@ document
     fecharCarrinho
 );
 
-
 document
 .getElementById("botaoContinuar")
 .addEventListener(
@@ -2795,24 +2181,12 @@ document
     fecharCarrinho
 );
 
-
 document
 .getElementById("botaoFinalizar")
 .addEventListener(
     "click",
     finalizarPedido
 );
-
-
-/* EXCLUIR TUDO */
-
-document
-.getElementById("botaoExcluirTudo")
-.addEventListener(
-    "click",
-    excluirTudo
-);
-
 
 /* BOTÕES DO VISUALIZADOR */
 
@@ -2823,7 +2197,6 @@ document
     fecharFoto
 );
 
-
 document
 .getElementById("fotoAnterior")
 .addEventListener(
@@ -2831,14 +2204,12 @@ document
     fotoAnterior
 );
 
-
 document
 .getElementById("proximaFoto")
 .addEventListener(
     "click",
     proximaFoto
 );
-
 
 /* CLICAR FORA DA FOTO FECHA */
 
@@ -2862,7 +2233,6 @@ document
     }
 );
 
-
 /* TECLADO */
 
 document.addEventListener(
@@ -2874,7 +2244,6 @@ function(event){
         "visualizador"
     );
 
-
     if(
         !visualizador.classList.contains(
             "aberto"
@@ -2885,20 +2254,17 @@ function(event){
 
     }
 
-
     if(event.key === "Escape"){
 
         fecharFoto();
 
     }
 
-
     if(event.key === "ArrowLeft"){
 
         fotoAnterior();
 
     }
-
 
     if(event.key === "ArrowRight"){
 
@@ -2907,7 +2273,6 @@ function(event){
     }
 
 });
-
 
 /* =========================
    INICIAR
